@@ -5,7 +5,7 @@ Project repo for Team Swift
 [Matt Collecutt](www.github.com/mattcollie)
 
 ### Members
-[Geoff Roodt](www.github.com/Geoff-Roodt)
-[Amber Johnsen](www.github.com/AmberJohnsen)
-[Ashton Lye](www.github.com/ashton-lye)
-[Cody Ludwig](www.github.com/CodyLudwig)
+[Geoff Roodt](www.github.com/Geoff-Roodt)<br>
+[Amber Johnsen](www.github.com/AmberJohnsen)<br>
+[Ashton Lye](www.github.com/ashton-lye)<br>
+[Cody Ludwig](www.github.com/CodyLudwig)<br>
