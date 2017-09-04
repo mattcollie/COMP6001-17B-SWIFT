@@ -11,6 +11,7 @@ Project repo for Team Swift
 [Cody Ludwig](www.github.com/CodyLudwig)<br>
 
 ## Useful Links
+[Assesment Outline](https://github.com/ToiOhomaiBCS/jk11-assessments/blob/master/COMP6001/assessment-02.md)
 [Trello](https://trello.com/b/LyQqVv3z/assesment-2)<br>
 [To-bcs](http://to-bcs.nz/COMP6001/courseoutline)<br>
 [Google Drive Team](https://drive.google.com/drive/u/0/folders/0AJ6tqbsTbFdDUk9PVA)<br>
