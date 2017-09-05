@@ -5,10 +5,10 @@ Project repo for Team Swift
 [Matt Collecutt](www.github.com/mattcollie)
 
 ### Members
-[Geoff Roodt](www.github.com/Geoff-Roodt)<br>
-[Amber Johnsen](www.github.com/AmberJohnsen)<br>
-[Ashton Lye](www.github.com/ashton-lye)<br>
-[Cody Ludwig](www.github.com/CodyLudwig)<br>
+[Geoff Roodt](https://www.github.com/Geoff-Roodt)<br>
+[Amber Johnsen](https://www.github.com/AmberJohnsen)<br>
+[Ashton Lye](https://www.github.com/ashton-lye)<br>
+[Cody Ludwig](https://www.github.com/Cody-Ludwig)<br>
 
 ## Useful Links
 [Assesment Outline](https://github.com/ToiOhomaiBCS/jk11-assessments/blob/master/COMP6001/assessment-02.md)<br>
