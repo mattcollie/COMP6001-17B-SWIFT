@@ -28,7 +28,7 @@ _coming_
 _coming_
 
 ### Trello
-_coming_
+We have decided to use Trello as our project manangement system because it is most familiar and utilizes our needs collectively. Within the team there is experience using Trello so it was the first application considered, another application for a project management system considered was Github Projects, this was dismissed as it appeared less interactive then the original option Trello which is customizable with cats as the main theme. Trello also has Github interaction which allows Github repositories to become linked to the cards and tasks which gives us insight into our Github project and branch at hand. Trello also has an interactive mobile application where we can view/update/delete cards on the fly, which is handy for on the go updating.
 
 ### Github
 _coming_
