@@ -36,8 +36,8 @@ _coming_
 ### XCode
 _coming_
 
-### ARKit
-_coming_
+### Camera Input
+We decided to use the phone's built in camera to scan the barcode on a student's ID card, rather than just entering their ID number into a text box or something like that. Of course, we do have an option to just enter the number in case the card isn't scanning or the student doesn't have one, but we wanted to do something a little bit more interesting for our main idea. We thought that using the camera's input to scan the barcode would be a good idea as it means the student doesn't have to remember (or even know) their ID number or moodle login details. Currently a student has to log in to moodle to check their timetable which is very slow and inefficient because you have to go through several different pages and menus to get to the timetable. We thought that being able to just point your phone at your ID card and have your timetable shown instantly would be much quicker and more efficient. We also thought that using a camera input would be a good experiment to try as none of us had really worked with camera input before, and iOS/swift have built in functions for scanning both QR codes and regular barcodes. We thought it would be an interesting experiment to use it and see how it would be implemented in a real-world situation.
 
 
 ## Delegated Roles
