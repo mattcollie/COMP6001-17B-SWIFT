@@ -49,7 +49,7 @@ _coming_
 _coming_
 
 ### Ashton's Role
-_coming_
+Since we were wanting to use the phone's camera to scan the ID cards, Ashton was assigned to work on figuring out how to use and display the camera input, and use it to detect and scan a barcode on the cards. Originally we discussed using ARKit to achieve this, however we realised that this was actually unneccessary for just a barcode scanner. Ashton did some research and discovered that iOS and swift actually have QR code and barcode reading supported natively by the camera, so he has looked into how to use that and will be using it in our app to scan the barcodes on the student ID's. 
 
 ### Cody's Role
 _coming_
