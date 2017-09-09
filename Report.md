@@ -25,7 +25,7 @@ _coming_
 ## Tools Used
 
 ### Slack
-_coming_
+The team decided to use Slack as the tool for communicating between team members. Slack is an industry standard for communication, and because everyone in the team has had extensive use with it we determined it would be the best suited tool for our team to use. One alternative which was considered was Facebook's Group Chat, but because it lacks professionalism, the ability for easy and seamless collaboration, useful integrations with Github, Trello etc etc, we found that Slack would be more useful to us as individual collaborators and developers working together in the team.
 
 ### Trello
 We have decided to use Trello as our project manangement system because it is most familiar and utilizes our needs collectively. Within the team there is experience using Trello so it was the first application considered, another application for a project management system considered was Github Projects, this was dismissed as it appeared less interactive then the original option Trello which is customizable with cats as the main theme. Trello also has Github interaction which allows Github repositories to become linked to the cards and tasks which gives us insight into our Github project and branch at hand. Trello also has an interactive mobile application where we can view/update/delete cards on the fly, which is handy for on the go updating.
@@ -46,7 +46,7 @@ We decided to use the phone's built in camera to scan the barcode on a student's
 _coming_
 
 ### Geoff's Role
-_coming_
+Geoff has been assigned the role of creating the functionality for the timesheet edit. He was helpful in the wireframe design, by asking critical questions, providing reasoned answers and strongly contributing to the design of the edit page. Geoff will now need to create the edit page in the app as per the spec of the wireframe.
 
 ### Ashton's Role
 Since we were wanting to use the phone's camera to scan the ID cards, Ashton was assigned to work on figuring out how to use and display the camera input, and use it to detect and scan a barcode on the cards. Originally we discussed using ARKit to achieve this, however we realised that this was actually unneccessary for just a barcode scanner. Ashton did some research and discovered that iOS and swift actually have QR code and barcode reading supported natively by the camera, so he has looked into how to use that and will be using it in our app to scan the barcodes on the student ID's. 
