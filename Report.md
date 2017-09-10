@@ -43,7 +43,7 @@ We decided to use the phone's built in camera to scan the barcode on a student's
 ## Delegated Roles
 
 ### Matt's Role
-_coming_
+Matt has been given the role to build the Api logic within the mobile application to interface with our chosen Api and creating an information page. He will have to communicate with each person as to how the Api Logic will be used within the app. Matt was helpful within the wire-framing process giving considering to each pages layout and design. Matt will need to now create the Api Logic layer to allow communication to each of the pages then create an information page to display information about the application.
 
 ### Geoff's Role
 Geoff has been assigned the role of creating the functionality for the timesheet edit. He was helpful in the wireframe design, by asking critical questions, providing reasoned answers and strongly contributing to the design of the edit page. Geoff will now need to create the edit page in the app as per the spec of the wireframe.
