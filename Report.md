@@ -68,4 +68,24 @@ Since we were wanting to use the phone's camera to scan the ID cards, Ashton was
 Cody's role in this assessment is to create the timetable display. For this he will be using a listview as it is will be very functional and easier for the user to navigate. The list view will be beneficial on a mobile display as it will use most of the screen efficiently, while allowing the user to read the info quickly.
 
 ### Amber's Role
-_coming_
+Amber has been given the role of developing the Search page.  During our meeting we all contributed to the design of wireframes for our app.  Matt was at the computer and we all contributed.  Confirming screen sizes, using our previous research to determine the functionality of each page, using best practices and more importantly designing each wireframe with 'what the user expects to happen' as our main focus.  Using draw.IO,  Ashton had his iPhone which I found useful to visualize my ideas has I was contributing them.  Geoff is very knowledgeable and answered many of my questions.  Cody was also very good at contributing ideas, and confirming which ones to keep.  I contributed a lot of the 'best practice' ideas, I felt we all equally contributed to the design and functionality.  I was brought up to speed as it was my first team meeting.  I will be developing the search page as per our wireframes.  The search page originally was going to offer more functionality such as editing, we had agreed that this would now be another screen.  In relation to GitHub being one of the composable   We have a set of microservices and mesh applications combined for our app functionality.  Composable services. I found this definition of composable services dictionary.com;
+> Composable services  
+: verb (used with object), composed,composing.
+1. to make or form by combining things, parts, or elements:
+He composed his speech from many research notes.
+2. to be or constitute a part or element of: a rich sauce composed of many ingredients.
+3. to make up or form the basis of: Style composes the essence of good writing.
+4. to put or dispose in proper form or order: to compose laws into a coherent system.
+5.Art. to organize the parts or elements of (a picture or the like).
+6. to create (a musical, literary, or choreographic work).
+7. to end or settle (a quarrel, dispute, etc.): The union and management composed their differences.
+
+All these definitions (including the sentence examples) are relevant use definitions they are all reasons for Team Shwifty, selected.  
+GitHub is an example of a composable service to make or take form using collaborations including parts of code, things each team member adds in accordance with team repository set up.  Is considered and combined by authorized personal.  
+As team, we are contributing ‘part or element’ of project and app code. Forming / making up the basis of the ability to work on versions of the latest code.  
+Definition 4 has the example ‘to compose laws into a coherent system’ and the ability to check off tasks, relate them to a Trello to do list puts GitHub under this definition.  Doing the things in the right order.
+5 and 6 both relate to art and creativity, taking away mundane repetitive code tasks, offering the open source cloneable code that can be created upon and added to.  
+Definition 7 also relates to GitHub with the functionality of the issues tab of which team members can paste code, questions to the team or specific members (collaborators) with a notification, option to let continuation happen after the issue has been solved.
+All designed to utilize cloud, data and *[AI]: Artificial Intelligence.
+*[API]’s: Application Platform Interfaces for topic specific third party data sources, these selectable data sets become available for day to day business processes.  Also, Sensor data, continual stream of data intake.  These provide software developers with editable data in mass amounts.  All make changes to the business process.    
+To plan and develop we need to use the best mix of these tools with the right amount of understanding of each tool to make them beneficial.
