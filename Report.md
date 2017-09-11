@@ -36,7 +36,15 @@ The team decided to use Slack as the tool for communicating between team members
 We have decided to use Trello as our project manangement system because it is most familiar and utilizes our needs collectively. Within the team there is experience using Trello so it was the first application considered, another application for a project management system considered was Github Projects, this was dismissed as it appeared less interactive then the original option Trello which is customizable with cats as the main theme. Trello also has Github interaction which allows Github repositories to become linked to the cards and tasks which gives us insight into our Github project and branch at hand. Trello also has an interactive mobile application where we can view/update/delete cards on the fly, which is handy for on the go updating.
 
 ### Github
-_coming_
+GitHub is an open source Version Control System.  It has over 20 million developers making it the biggest community of online developers.  Can allow administrative rights, linking to Trello our Project Management Platform and Slack our Communication Platform.  The benefits of choosing GitHub;
+-    **Built-in tagging system:** Allows you to organize and prioritize your workflow and to easily search through projects for relevant information.
+-    **Milestones:** Perfect for associating issues with specific features or project phases, such as bugs that need to be fixed before a beta launch or tasks to be completed in October.
+-    **Multi assignments:** Issues can be assigned to users in bulk, saving time and making you more efficient.
+-    **Commenting:** can easily discuss progress and results at every step of the way using the inbuilt commenting system.
+-    **Task lists:** Larger issues can be broken down into stages to discourage the creation of dozens of microscopic issues, keeping all of your work in the same place.
+-    **Markdown format:** ability to use markdown formatting will prove popular with your developers, and it can be used in most places around GitHub.
+-    **Project boards:** can be used to house issues, pull requests and notes, categorizing them as cards in columns of your choosing so you can look at larger projects.
+-    **High security:** GitHub  keeps data safe, and it’s harder to breach than most other project management systems.
 
 ### XCode
 For our coding software we chose to use xCode as there is no other way of coding with Swift, however xCode does come with plenty of benefits such as a really easy and functional interface builder. xCode also allows us to deploy our our newly written code to an iOS VM of our choice, proving to be highly beneficial when it comes to sizing and adapting aspects of our designs. Also xCode is really fun to code in and very straightforward.
