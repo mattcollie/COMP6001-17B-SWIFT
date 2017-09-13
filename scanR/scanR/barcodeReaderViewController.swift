@@ -55,11 +55,13 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
             scanningNotPossible()
         }
         
+        // Add previewLayer and have it show the video data.
         previewLayer = AVCaptureVideoPreviewLayer(session: session);
         previewLayer.frame = view.layer.bounds;
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
         view.layer.addSublayer(previewLayer);
         
+        // Begin the capture session.
         session.startRunning()
         
     }
@@ -80,13 +82,38 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
             let barcodeReadable = barcodeData as? AVMetadataMachineReadableCodeObject;
             if let readableCode = barcodeReadable {
                 // Send the barcode as a string to barcodeDetected()
-                barcodeDetected(readableCode.stringValue);
+                barcodeDetected(code: readableCode.stringValue);
             }
             
             // Vibrate the device to give the user some feedback.
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             
             // Avoid a very buzzy device.
+            session.stopRunning()
+        }
+    }
+    
+    func barcodeDetected(code: String) {
+        
+        // Let the user know we've found something.
+        let alert = UIAlertController(title: "Found a Barcode!", message: code, preferredStyle: UIAlertControllerStyle.alert)
+
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        if (session?.isRunning == false) {
+            session.startRunning()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if (session?.isRunning == true) {
             session.stopRunning()
         }
     }
