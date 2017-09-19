@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C93E936262F75249B0C2B3F5621B08D583A40229",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6F8051094437DCE21B2D9FFBCDC605A97A2BEEDF" : 9223372036854775807,
+    "C93E936262F75249B0C2B3F5621B08D583A40229" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "552DB358-A2C0-4F43-9F02-283E43E1764C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6F8051094437DCE21B2D9FFBCDC605A97A2BEEDF" : "",
+    "C93E936262F75249B0C2B3F5621B08D583A40229" : "Assessment%202\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "scanR",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "scanR\/scanR.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Geoff-Roodt\/COMP6001-Ass1.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6F8051094437DCE21B2D9FFBCDC605A97A2BEEDF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mattcollie\/COMP6001-17B-SWIFT.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C93E936262F75249B0C2B3F5621B08D583A40229"
+    }
+  ]
+}
