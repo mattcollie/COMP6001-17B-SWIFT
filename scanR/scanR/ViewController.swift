@@ -25,8 +25,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         boxView.layer.borderWidth = 3
         boxView.layer.cornerRadius = 10
         
+        startCamera()
+    }
+    
+    func startCamera() {
         // Create a session object.
-        
         session = AVCaptureSession()
         
         // Set the captureDevice.
@@ -34,7 +37,6 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         let videoCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         // Create input object.
-        
         let videoInput: AVCaptureDeviceInput?
         
         do {
@@ -139,7 +141,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     func barcodeDetected(_ code: String) {
         
         // Let the user know we've found something.
-        let alert = UIAlertController(title: "Found a Barcode!", message: code, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Found a Barcode!", message: "Card Number:\(code)", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
         
         
         self.present(alert, animated: true, completion: nil)
