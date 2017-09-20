@@ -4,8 +4,11 @@ import AVFoundation
 class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
  
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var boxView: UIView!
     @IBOutlet weak var cameraView: UIView!
+    
     var session: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
