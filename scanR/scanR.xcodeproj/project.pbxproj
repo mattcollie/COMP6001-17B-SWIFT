@@ -14,7 +14,6 @@
 		E264AC721F687DED00133BAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E264AC701F687DED00133BAF /* LaunchScreen.storyboard */; };
 		E264AC7D1F687DEE00133BAF /* scanRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264AC7C1F687DEE00133BAF /* scanRTests.swift */; };
 		E264AC881F687DEE00133BAF /* scanRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264AC871F687DEE00133BAF /* scanRUITests.swift */; };
-		E264AC961F6884F100133BAF /* barcodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264AC951F6884F100133BAF /* barcodeReaderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 		E264AC831F687DEE00133BAF /* scanRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = scanRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E264AC871F687DEE00133BAF /* scanRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scanRUITests.swift; sourceTree = "<group>"; };
 		E264AC891F687DEE00133BAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E264AC951F6884F100133BAF /* barcodeReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = barcodeReaderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +102,6 @@
 				E264AC6B1F687DED00133BAF /* Main.storyboard */,
 				E264AC6E1F687DED00133BAF /* Assets.xcassets */,
 				E264AC701F687DED00133BAF /* LaunchScreen.storyboard */,
-				E264AC951F6884F100133BAF /* barcodeReaderViewController.swift */,
 				E264AC731F687DED00133BAF /* Info.plist */,
 			);
 			path = scanR;
@@ -265,7 +262,6 @@
 			files = (
 				E264AC6A1F687DED00133BAF /* ViewController.swift in Sources */,
 				E264AC681F687DED00133BAF /* AppDelegate.swift in Sources */,
-				E264AC961F6884F100133BAF /* barcodeReaderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +508,7 @@
 				E264AC8E1F687DEE00133BAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E264AC8F1F687DEE00133BAF /* Build configuration list for PBXNativeTarget "scanRTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +517,7 @@
 				E264AC911F687DEE00133BAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E264AC921F687DEE00133BAF /* Build configuration list for PBXNativeTarget "scanRUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +526,7 @@
 				E264AC941F687DEE00133BAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

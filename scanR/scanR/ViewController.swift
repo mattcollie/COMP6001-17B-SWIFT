@@ -141,8 +141,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     func barcodeDetected(_ code: String) {
         
         // Let the user know we've found something.
-        let alert = UIAlertController(title: "Found a Barcode!", message: "Card Number:\(code)", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        let alert = UIAlertController(title: "Found a Barcode!", message: "Card Number: \(code)", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: startCamera(), #selector(startCamera)))
         
         
         self.present(alert, animated: true, completion: nil)
