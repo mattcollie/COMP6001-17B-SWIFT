@@ -1,12 +1,3 @@
-
-//
-//  BarcodeReaderViewController.swift
-//  CDBarcodes
-//
-//  Created by Matthew Maher on 1/29/16.
-//  Copyright © 2016 Matt Maher. All rights reserved.
-//
-
 import UIKit
 import AVFoundation
 
@@ -142,7 +133,15 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         
         // Let the user know we've found something.
         let alert = UIAlertController(title: "Found a Barcode!", message: "Card Number: \(code)", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: startCamera(), #selector(startCamera)))
+        //API call here to check if user is registered
+        //if user is registered:
+        alert.addAction(UIAlertAction(title: "View Timetable", style: .default, handler: nil)) //goes to cody's page - displays timetable
+        //else:
+        alert.addAction(UIAlertAction(title: "Register New Student", style: .default, handler: nil)) //goes to add timetable page
+        //dismiss alert and restart capture session
+        alert.addAction(UIAlertAction(title: "Scan Another Card", style: .default, handler: {(uiAlert) in
+            self.startCamera()
+        }))
         
         
         self.present(alert, animated: true, completion: nil)
