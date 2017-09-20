@@ -16,21 +16,28 @@ class ApiLogic {
         response(endpoint, "", "")
     }
 
+    internal static func GetRequest(id: Int64, response: GetMethodHandler) {
+        //let url = GetURL(endpoint + "/" + id.ToString())
+        //URLSession.shared.dataTask(with: url, completionHandler:  response).resume()
+        response(endpoint, "", "")
+    }
 
     public static func Get(response: GetMethodHandler) {
         GetRequest(response: response)
     }
+
+    public static func Get(id: Int64, response: GetMethodHandler) {
+        GetRequest(id: id, response: response)
+    }
 }
 
 class StudentApi : ApiLogic {
-    
     override class var endpoint: String { return "student" }
 
 }
 
-class TimesheetApi : ApiLogic {
-    
-    override class var endpoint: String { return "timesheet" }
+class TimeslotApi : ApiLogic {
+    override class var endpoint: String { return "timeslot" }
 
 }
 
@@ -52,7 +59,7 @@ struct Student {
     var BarcodeId: Int64?
 }
 
-TImesheetApi.Get(response:  { (data, response, error) in
+TimeslotApi.Get(id: 2, response:  { (data, response, error) in
     if let data = data {
         print(data)
     }
