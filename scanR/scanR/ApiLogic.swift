@@ -7,7 +7,7 @@ class ApiLogic {
     typealias GetMethodHandler = (_: Any?, _: Any?, _: Any?) -> Void
 
     private static func GetURL(type: String) -> URL {
-        let url = URL(string: "http://localhost:2344/api/" + type)!
+        let url = URL(string: "http://mattc.cloudfast.co/api/" + type)!
         return url
     }
 
