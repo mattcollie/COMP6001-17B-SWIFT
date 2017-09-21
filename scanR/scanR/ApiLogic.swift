@@ -1,39 +1,43 @@
+import Foundation
+
 class ApiLogic {
     
     class var endpoint: String { return "" }
 
-    typealias GetMethodHandler = (_: String?, _: Any?, _: Any?) -> Void
+    typealias GetMethodHandler = (_: Any?, _: Any?, _: Any?) -> Void
 
-    private static func GetURL(type: String) -> Any {
-        //let url = URL(string: "http://localhost:2344/api/" + type)!
-        //return url
-        return ""
+    private static func GetURL(type: String) -> URL {
+        let url = URL(string: "http://localhost:2344/api/" + type)!
+        return url
     }
 
-    internal static func GetRequest(response: GetMethodHandler) {
-        //let url = GetURL(endpoint)
-        //URLSession.shared.dataTask(with: url, completionHandler:  response).resume()
-        response(endpoint, "", "")
+    internal static func GetRequest(response:  @escaping GetMethodHandler) {
+        let url = GetURL(type: endpoint)
+        let task = URLSession.shared.dataTask(with: url, completionHandler: response)
+        task.resume()
     }
 
-    internal static func GetRequest(id: Int64, response: GetMethodHandler) {
-        //let url = GetURL(endpoint + "/" + id.ToString())
-        //URLSession.shared.dataTask(with: url, completionHandler:  response).resume()
-        response(endpoint, "", "")
+    internal static func GetRequest(extra: String, response: @escaping GetMethodHandler) {
+        let url = GetURL(type: endpoint + "/" + extra)
+        let task = URLSession.shared.dataTask(with: url, completionHandler: response)
+        task.resume()
     }
 
-    public static func Get(response: GetMethodHandler) {
+    public static func Get(response: @escaping GetMethodHandler) {
         GetRequest(response: response)
     }
 
-    public static func Get(id: Int64, response: GetMethodHandler) {
-        GetRequest(id: id, response: response)
+    public static func Get(id: Int64, response: @escaping GetMethodHandler) {
+        GetRequest(extra: String(id), response: response)
     }
 }
 
 class StudentApi : ApiLogic {
     override class var endpoint: String { return "student" }
 
+    public static func GetByBarcode(id: Int64, response: @escaping GetMethodHandler) {
+        GetRequest(extra: "barcode/" + String(id), response: response)
+    }
 }
 
 class TimeslotApi : ApiLogic {
@@ -58,9 +62,3 @@ struct Student {
     var LastName: String
     var BarcodeId: Int64?
 }
-
-TimeslotApi.Get(id: 2, response:  { (data, response, error) in
-    if let data = data {
-        print(data)
-    }
-})
