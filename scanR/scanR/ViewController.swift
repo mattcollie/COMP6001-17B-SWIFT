@@ -151,7 +151,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     @IBAction func InfoButtonClick(_ sender: Any) {
-        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "InfoController") as! InfoController
+        let secondViewController = InfoController()
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }
 }
