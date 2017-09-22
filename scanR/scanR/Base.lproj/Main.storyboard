@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QCf-nE-OKF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -97,6 +97,9 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="InfoButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W2K-Aw-8pM"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="scanR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cn9-tU-xeG">
                                 <rect key="frame" x="16" y="28" width="218" height="22"/>
@@ -112,7 +115,7 @@
                     <connections>
                         <outlet property="boxView" destination="mnU-qg-ntk" id="7fC-qx-Kqa"/>
                         <outlet property="cameraView" destination="Uva-7E-4lh" id="ur8-Rz-sJK"/>
-                        <outlet property="infoButton" destination="yNF-7j-Np7" id="rBg-bI-Lwm"/>
+                        <outlet property="infoButton" destination="yNF-7j-Np7" id="i6v-7g-2wm"/>
                         <outlet property="searchButton" destination="m3x-bK-euk" id="8PQ-im-4jI"/>
                     </connections>
                 </viewController>
