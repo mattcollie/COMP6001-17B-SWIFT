@@ -15,13 +15,15 @@ class TimeTableDetailViewController: UIViewController {
     @IBOutlet weak var dateStart: UIDatePicker!
     @IBOutlet weak var dateEnd: UIDatePicker!
 
-    let item: Foo.self
+    var item: Foo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if item = item{
-            txtDay.te
+        if let item = item {
+            txtDay.text = item.time
+            txtPaperCode.text = item.code
+            txtRoom.text = item.room
         }
 
         // Do any additional setup after loading the view.

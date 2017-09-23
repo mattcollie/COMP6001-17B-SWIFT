@@ -133,9 +133,10 @@ class TimeTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         super.prepare(for: segue, sender: sender)
+        
         switch(segue.identifier ?? ""){
             case "ShowDetail":
-                guard let itemDetailViewController = segue.destination as? TimeTableViewController else {
+                guard let itemDetailViewController = segue.destination as? TimeTableDetailViewController else {
                     fatalError("Unexpected destination: \(segue.destination)")
                 }
             
@@ -148,7 +149,11 @@ class TimeTableViewController: UITableViewController {
                 }
             
                 let selectedItem = foos[indexPath.row]
-                itemDetailViewController.foo = selectedItem
+                itemDetailViewController.item = selectedItem
+            
+        default:
+            fatalError("Unexpected Segue Identifier: \(segue.identifier)")
+            
         }
     }
     
