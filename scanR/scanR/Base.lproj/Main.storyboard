@@ -325,6 +325,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Item" id="HoP-WI-KoY"/>
+                    <connections>
+                        <outlet property="dateEnd" destination="Sfr-Vt-JWK" id="rKd-4l-iZR"/>
+                        <outlet property="dateStart" destination="EAD-k9-fxq" id="cZS-R4-aho"/>
+                        <outlet property="txtDay" destination="7bu-Bh-vgc" id="UpD-7Y-dsZ"/>
+                        <outlet property="txtPaperCode" destination="686-cI-g4J" id="YYu-QU-h00"/>
+                        <outlet property="txtRoom" destination="Icq-ud-BKg" id="R8M-KA-Grx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GUc-DH-DDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

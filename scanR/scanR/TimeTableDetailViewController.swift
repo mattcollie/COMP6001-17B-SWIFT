@@ -9,9 +9,20 @@
 import UIKit
 
 class TimeTableDetailViewController: UIViewController {
+    @IBOutlet weak var txtDay: UITextField!
+    @IBOutlet weak var txtPaperCode: UITextField!
+    @IBOutlet weak var txtRoom: UITextField!
+    @IBOutlet weak var dateStart: UIDatePicker!
+    @IBOutlet weak var dateEnd: UIDatePicker!
 
+    let item: Foo.self
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if item = item{
+            txtDay.te
+        }
 
         // Do any additional setup after loading the view.
     }
