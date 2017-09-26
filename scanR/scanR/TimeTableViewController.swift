@@ -151,6 +151,11 @@ class TimeTableViewController: UITableViewController {
                 let selectedItem = foos[indexPath.row]
                 itemDetailViewController.item = selectedItem
             
+            case "ShowCamera":
+                guard let cameraViewController = segue.destination as? ViewController else {
+                    fatalError("Unexpected destination: \(segue.destination)")
+                }
+            
         default:
             fatalError("Unexpected Segue Identifier: \(segue.identifier)")
             
