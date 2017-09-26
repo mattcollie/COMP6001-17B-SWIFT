@@ -4,7 +4,7 @@ class ApiLogic {
     
     class var endpoint: String { return "" }
 
-    typealias GetMethodHandler = (_: Any?, _: Any?, _: Any?) -> Void
+    typealias GetMethodHandler = (_: Data?, _: URLResponse?, _: Error?) -> Void
 
     private static func GetURL(type: String) -> URL {
         let url = URL(string: "http://mattc.cloudfast.co/api/" + type)!
@@ -23,11 +23,11 @@ class ApiLogic {
         task.resume()
     }
 
-    public static func Get(response: @escaping GetMethodHandler) {
+    internal static func GetResult(response: @escaping GetMethodHandler) {
         GetRequest(response: response)
     }
 
-    public static func Get(id: Int64, response: @escaping GetMethodHandler) {
+    internal static func GetResult(id: Int64, response: @escaping GetMethodHandler) {
         GetRequest(extra: String(id), response: response)
     }
 }
@@ -35,6 +35,20 @@ class ApiLogic {
 class StudentApi : ApiLogic {
     override class var endpoint: String { return "student" }
 
+    typealias GetStudentMethod = (_: Data?, _: URLResponse?) -> Void
+    public static func Get(response: @escaping GetStudentMethod) {
+        GetResult(response: {(data, urlResponse, error) -> Void in
+            if let data = data,
+                let rawJSON = try? JSONSerialization.jsonObject(with:
+                    data),
+                let json = rawJSON as? [String: String] {
+                print(json)
+                
+                response(data, urlResponse)
+            }
+        })
+    }
+    
     public static func GetByBarcode(id: Int64, response: @escaping GetMethodHandler) {
         GetRequest(extra: "barcode/" + String(id), response: response)
     }
