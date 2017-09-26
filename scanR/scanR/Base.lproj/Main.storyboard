@@ -119,6 +119,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Beh-7R-6rB" kind="showDetail" id="drj-5g-xmL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNF-7j-Np7">
                                 <rect key="frame" x="337" y="28" width="22" height="22"/>
@@ -256,7 +259,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2P-8t-b4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="3rE-IH-Bww" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="156" y="833"/>
+            <point key="canvasLocation" x="156" y="869"/>
         </scene>
         <!--Search-->
         <scene sceneID="NXZ-lb-KU2">
@@ -275,6 +278,11 @@
                                 <items>
                                     <navigationItem title="Search" id="zwF-yW-BrX">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="GOn-VF-W4R"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="SkZ-EW-fDX">
+                                            <connections>
+                                                <segue destination="dvz-C3-vkA" kind="unwind" unwindAction="unwindToCameraWithUnwindSegue:" id="9ea-nK-fxq"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -305,6 +313,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MG3-Zb-75b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dvz-C3-vkA" userLabel="Exit" sceneMemberID="exit"/>
                 <searchDisplayController id="37F-vz-k2O">
                     <connections>
                         <outlet property="delegate" destination="Beh-7R-6rB" id="QGl-Ae-UDu"/>
@@ -323,7 +332,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1013.6" y="846.9265367316342"/>
+            <point key="canvasLocation" x="969" y="869"/>
         </scene>
         <!--Time Table Detail View Controller-->
         <scene sceneID="mEV-4w-Chb">
