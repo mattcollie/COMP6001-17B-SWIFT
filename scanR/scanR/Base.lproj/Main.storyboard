@@ -159,7 +159,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9hc-c6-JWb" id="4va-gP-qt5">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5p-iT-y0a">
@@ -230,7 +230,7 @@
                     <navigationItem key="navigationItem" title="Timetable" id="9jM-cx-7hM">
                         <barButtonItem key="leftBarButtonItem" systemItem="camera" id="ZE6-CR-gxh">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="nQF-zN-It6"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="ShowCamera" id="nQF-zN-It6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
