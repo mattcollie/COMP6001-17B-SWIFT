@@ -48,6 +48,18 @@ class StudentApi : ApiLogic {
         })
     }
     
+    typealias GetByStudentMethod = (_: Student?, _: URLResponse?) -> Void
+    public static func GetByStudentId(id: Int64, response: @escaping GetByStudentMethod) {
+        GetResult(id: id, response: {(data, urlResponse, error) -> Void in
+            if let data = data,
+                let rawJSON = try? JSONSerialization.jsonObject(with: data),
+                let json = rawJSON as? [String: String] {
+                print(json)
+                let student = Student(StudentId: 1, FirstName: "John", LastName: "Doe", BarcodeId: nil)
+                response(student, urlResponse)
+            }
+        })
+    }
     
     typealias GetByBarcodeMethod = (_: Student?, _: URLResponse?) -> Void
     public static func GetByBarcode(id: Int64, response: @escaping GetByBarcodeMethod) {
