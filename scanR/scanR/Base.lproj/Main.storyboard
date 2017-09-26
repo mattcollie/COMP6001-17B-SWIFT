@@ -281,6 +281,10 @@
                             <searchBar contentMode="redraw" placeholder="Enter Student ID Number" translatesAutoresizingMaskIntoConstraints="NO" id="lEj-nN-zF0">
                                 <rect key="frame" x="0.0" y="44" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="Beh-7R-6rB" id="lN2-Gw-2nw"/>
                                 </connections>
