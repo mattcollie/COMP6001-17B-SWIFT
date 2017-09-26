@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -257,6 +257,73 @@
                 <exit id="3rE-IH-Bww" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="156" y="833"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="NXZ-lb-KU2">
+            <objects>
+                <viewController title="Search" id="Beh-7R-6rB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="buD-5C-Jrb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cgt-th-Gq7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Eur-eZ-5Wa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fz3-1O-47r">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Search" id="zwF-yW-BrX">
+                                        <barButtonItem key="backBarButtonItem" title="Back" id="GOn-VF-W4R"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" placeholder="Enter Student ID Number" translatesAutoresizingMaskIntoConstraints="NO" id="lEj-nN-zF0">
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="Beh-7R-6rB" id="lN2-Gw-2nw"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fz3-1O-47r" firstAttribute="leading" secondItem="lEj-nN-zF0" secondAttribute="leading" id="5e0-fD-uWO"/>
+                            <constraint firstAttribute="trailing" secondItem="Fz3-1O-47r" secondAttribute="trailing" id="D5l-mK-b67"/>
+                            <constraint firstItem="Fz3-1O-47r" firstAttribute="leading" secondItem="Eur-eZ-5Wa" secondAttribute="leading" id="HJ3-cX-f7C"/>
+                            <constraint firstItem="Fz3-1O-47r" firstAttribute="top" secondItem="Eur-eZ-5Wa" secondAttribute="top" id="NRe-or-ntP"/>
+                            <constraint firstItem="Fz3-1O-47r" firstAttribute="bottom" secondItem="lEj-nN-zF0" secondAttribute="top" id="bEU-pI-C4c"/>
+                            <constraint firstItem="Fz3-1O-47r" firstAttribute="trailing" secondItem="lEj-nN-zF0" secondAttribute="trailing" id="vJz-sS-9vE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="Pas-aP-gjk" id="uJD-OA-XWE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MG3-Zb-75b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="37F-vz-k2O">
+                    <connections>
+                        <outlet property="delegate" destination="Beh-7R-6rB" id="QGl-Ae-UDu"/>
+                        <outlet property="searchContentsController" destination="Beh-7R-6rB" id="g1h-Vm-z0n"/>
+                        <outlet property="searchResultsDataSource" destination="Beh-7R-6rB" id="ToL-38-efy"/>
+                        <outlet property="searchResultsDelegate" destination="Beh-7R-6rB" id="pDo-w1-XLL"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="Pas-aP-gjk">
+                    <connections>
+                        <outlet property="delegate" destination="Beh-7R-6rB" id="e0o-nj-Jox"/>
+                        <outlet property="searchBar" destination="lEj-nN-zF0" id="1ge-zf-ZVR"/>
+                        <outlet property="searchContentsController" destination="Beh-7R-6rB" id="5zU-Ih-Re6"/>
+                        <outlet property="searchResultsDataSource" destination="Beh-7R-6rB" id="Cl8-1m-inH"/>
+                        <outlet property="searchResultsDelegate" destination="Beh-7R-6rB" id="Yvy-hT-X7K"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1013.6" y="846.9265367316342"/>
         </scene>
         <!--Time Table Detail View Controller-->
         <scene sceneID="mEV-4w-Chb">
