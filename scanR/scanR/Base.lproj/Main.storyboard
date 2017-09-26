@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fa1-aB-SlB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,17 +27,10 @@
                                 <items>
                                     <navigationItem title="Info" id="1Rm-3V-iOI">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="FPt-9J-lo4"/>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="QhE-PF-hWj">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vi9-y1-A8j">
-                                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                <state key="normal" title="X">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                            </button>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="QhE-PF-hWj">
                                             <connections>
                                                 <action selector="buttonClose:" destination="84N-jE-st3" id="Fjl-6Z-f1x"/>
+                                                <segue destination="T19-c3-5T1" kind="unwind" unwindAction="unwindToCameraWithUnwindSegue:" id="c8K-f8-3hb"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -71,8 +64,22 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKW-lh-0fU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="T19-c3-5T1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="572" y="-541.07946026986508"/>
+            <point key="canvasLocation" x="969" y="124"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QqX-cZ-vEr">
+            <objects>
+                <navigationController id="5No-95-LLE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="est-rn-eVr">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OgL-d4-9Tw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-959" y="124"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -122,6 +129,7 @@
                                 </state>
                                 <connections>
                                     <action selector="InfoButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W2K-Aw-8pM"/>
+                                    <segue destination="84N-jE-st3" kind="showDetail" identifier="ShowInfo" id="Y8d-fU-YXs"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="scanR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cn9-tU-xeG">
@@ -140,6 +148,7 @@
                         <outlet property="cameraView" destination="Uva-7E-4lh" id="ur8-Rz-sJK"/>
                         <outlet property="infoButton" destination="yNF-7j-Np7" id="i6v-7g-2wm"/>
                         <outlet property="searchButton" destination="m3x-bK-euk" id="8PQ-im-4jI"/>
+                        <segue destination="QCf-nE-OKF" kind="showDetail" identifier="showTimetable" id="qAL-Qz-bhp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -154,9 +163,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="Xcu-xW-kci">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Timetable" id="LIx-dK-ygf">
+                                    <barButtonItem key="rightBarButtonItem" systemItem="stop" id="RDj-pt-HCE">
+                                        <connections>
+                                            <segue destination="3rE-IH-Bww" kind="unwind" unwindAction="unwindToCameraWithUnwindSegue:" id="TA7-sX-8d5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeTableViewCell" rowHeight="90" id="9hc-c6-JWb" customClass="TimeTableViewCell" customModule="scanR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9hc-c6-JWb" id="4va-gP-qt5">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -228,18 +250,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Timetable" id="9jM-cx-7hM">
-                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="ZE6-CR-gxh">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="ShowCamera" id="nQF-zN-It6"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="ZE6-CR-gxh"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2P-8t-b4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3rE-IH-Bww" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="980" y="790"/>
+            <point key="canvasLocation" x="156" y="833"/>
         </scene>
-        <!--Edit Item-->
+        <!--Time Table Detail View Controller-->
         <scene sceneID="mEV-4w-Chb">
             <objects>
                 <viewController id="Ows-e9-Ogf" customClass="TimeTableDetailViewController" customModule="scanR" customModuleProvider="target" sceneMemberID="viewController">
@@ -321,10 +340,22 @@
                                     <!--2017-09-23 04:32:39 +0000-->
                                 </date>
                             </datePicker>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vVH-c6-ocw">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Edit Item" id="9Hh-A8-6fZ">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Oqm-H7-e19">
+                                            <connections>
+                                                <segue destination="NhH-h2-XoZ" kind="unwind" unwindAction="unwindToTimetableWithUnwindSegue:" id="EfG-GQ-KcV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Item" id="HoP-WI-KoY"/>
                     <connections>
                         <outlet property="dateEnd" destination="Sfr-Vt-JWK" id="rKd-4l-iZR"/>
                         <outlet property="dateStart" destination="EAD-k9-fxq" id="cZS-R4-aho"/>
@@ -334,24 +365,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GUc-DH-DDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="NhH-h2-XoZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="980" y="1584.5577211394304"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="0O4-yy-q6V">
-            <objects>
-                <navigationController id="Fa1-aB-SlB" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S3u-s5-JUo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="QCf-nE-OKF" kind="relationship" relationship="rootViewController" id="cbT-e7-Ye9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ux0-TK-rHO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="145" y="791"/>
+            <point key="canvasLocation" x="156" y="1620"/>
         </scene>
     </scenes>
 </document>
