@@ -142,7 +142,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         
         // Let the user know we've found something.
         let alert = UIAlertController(title: "Found a Barcode!", message: "Card Number: \(code)", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: startCamera(), #selector(startCamera)))
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: {(x) in startCamera() }))
         
         
         self.present(alert, animated: true, completion: nil)
