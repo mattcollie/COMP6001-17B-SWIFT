@@ -48,19 +48,6 @@ class ApiLogic {
 class StudentApi : ApiLogic {
     override class var endpoint: String { return "student" }
 
-    typealias GetStudentMethod = (_: [Student]?, _: URLResponse?) -> Void
-    public static func Get(response: @escaping GetStudentMethod) {
-        GetResult(response: {(data, urlResponse, error) -> Void in
-            if let data = data,
-                let rawJSON = try? JSONSerialization.jsonObject(with: data),
-                let json = rawJSON as? [String: String] {
-                print(json)
-                let students: [Student] = []
-                response(students, urlResponse)
-            }
-        })
-    }
-    
     typealias GetByStudentMethod = (_: Student?, _: URLResponse?) -> Void
     public static func GetByStudentId(id: Int64, response: @escaping GetByStudentMethod) {
         GetResult(id: id, response: {(data, urlResponse, error) -> Void in
