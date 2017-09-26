@@ -1,20 +1,14 @@
-
-//
-//  BarcodeReaderViewController.swift
-//  CDBarcodes
-//
-//  Created by Matthew Maher on 1/29/16.
-//  Copyright © 2016 Matt Maher. All rights reserved.
-//
-
 import UIKit
 import AVFoundation
 
 class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
  
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var boxView: UIView!
     @IBOutlet weak var cameraView: UIView!
+    
     var session: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
@@ -142,10 +136,23 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         
         // Let the user know we've found something.
         let alert = UIAlertController(title: "Found a Barcode!", message: "Card Number: \(code)", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: {(x) in startCamera() }))
+        //API call here to check if user is registered
+        //if user is registered:
+        alert.addAction(UIAlertAction(title: "View Timetable", style: .default, handler: nil)) //goes to cody's page - displays timetable
+        //else:
+        alert.addAction(UIAlertAction(title: "Register New Student", style: .default, handler: nil)) //goes to add timetable page
+        //dismiss alert and restart capture session
+        alert.addAction(UIAlertAction(title: "Scan Another Card", style: .default, handler: { (UIAlert) in
+            self.startCamera()
+        }))
         
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func InfoButtonClick(_ sender: Any) {
+        let secondViewController = InfoController()
+        self.navigationController?.pushViewController(secondViewController, animated: true)
     }
 }
 
