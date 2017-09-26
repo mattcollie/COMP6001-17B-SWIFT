@@ -142,7 +142,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         //else:
         alert.addAction(UIAlertAction(title: "Register New Student", style: .default, handler: nil)) //goes to add timetable page
         //dismiss alert and restart capture session
-        alert.addAction(UIAlertAction(title: "Scan Another Card", style: .default, handler: {(uiAlert) in
+        alert.addAction(UIAlertAction(title: "Scan Another Card", style: .default, handler: { (UIAlert) in
             self.startCamera()
         }))
         
