@@ -35,28 +35,49 @@ class ApiLogic {
 class StudentApi : ApiLogic {
     override class var endpoint: String { return "student" }
 
-    typealias GetStudentMethod = (_: Data?, _: URLResponse?) -> Void
+    typealias GetStudentMethod = (_: [Student]?, _: URLResponse?) -> Void
     public static func Get(response: @escaping GetStudentMethod) {
         GetResult(response: {(data, urlResponse, error) -> Void in
             if let data = data,
-                let rawJSON = try? JSONSerialization.jsonObject(with:
-                    data),
+                let rawJSON = try? JSONSerialization.jsonObject(with: data),
                 let json = rawJSON as? [String: String] {
                 print(json)
-                
-                response(data, urlResponse)
+                let students: [Student] = []
+                response(students, urlResponse)
             }
         })
     }
     
-    public static func GetByBarcode(id: Int64, response: @escaping GetMethodHandler) {
-        GetRequest(extra: "barcode/" + String(id), response: response)
+    
+    typealias GetByBarcodeMethod = (_: Student?, _: URLResponse?) -> Void
+    public static func GetByBarcode(id: Int64, response: @escaping GetByBarcodeMethod) {
+        GetRequest(extra: "barcode/" + String(id), response: {(data, urlResponse, error) -> Void in
+            if let data = data,
+                let rawJSON = try? JSONSerialization.jsonObject(with: data),
+                let json = rawJSON as? [String: String] {
+                print(json)
+                let student = Student(StudentId: 1, FirstName: "John", LastName: "Doe", BarcodeId: nil)
+                response(student, urlResponse)
+            }
+        })
     }
 }
 
 class TimeslotApi : ApiLogic {
     override class var endpoint: String { return "timeslot" }
 
+    typealias GetTimeslotsByStudentMethod = (_: [Timeslot]?, _: URLResponse?) -> Void
+    public static func GetTimeslotsByStudentId(id: Int64, response: @escaping GetTimeslotsByStudentMethod) {
+        GetResult(id: id, response: {(data, urlResponse, error) -> Void in
+            if let data = data,
+                let rawJSON = try? JSONSerialization.jsonObject(with: data),
+                let json = rawJSON as? [String: String] {
+                print(json)
+                let timeslots: [Timeslot] = []
+                response(timeslots, urlResponse)
+            }
+        })
+    }
 }
 
 struct Timeslot {
