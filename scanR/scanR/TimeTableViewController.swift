@@ -11,7 +11,10 @@ import UIKit
 class TimeTableViewController: UITableViewController {
 
     var foos = [Foo]()
+    var barcodeNumber = Int()
     
+    @IBAction func unwindToTimetable(unwindSegue: UIStoryboardSegue) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -151,10 +154,11 @@ class TimeTableViewController: UITableViewController {
                 let selectedItem = foos[indexPath.row]
                 itemDetailViewController.item = selectedItem
             
-            case "ShowCamera":
+            case "":
                 guard let cameraViewController = segue.destination as? ViewController else {
                     fatalError("Unexpected destination: \(segue.destination)")
                 }
+            
             
         default:
             fatalError("Unexpected Segue Identifier: \(segue.identifier)")

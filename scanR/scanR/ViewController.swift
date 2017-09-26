@@ -9,8 +9,12 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var boxView: UIView!
     @IBOutlet weak var cameraView: UIView!
     
+    @IBAction func unwindToCamera(unwindSegue: UIStoryboardSegue) {
+    }
+    
     var session: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    var barcode = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,12 +137,15 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func barcodeDetected(_ code: String) {
+        barcode = Int(code)!
         
         // Let the user know we've found something.
         let alert = UIAlertController(title: "Found a Barcode!", message: "Card Number: \(code)", preferredStyle: UIAlertControllerStyle.alert)
         //API call here to check if user is registered
         //if user is registered:
-        alert.addAction(UIAlertAction(title: "View Timetable", style: .default, handler: nil)) //goes to cody's page - displays timetable
+        alert.addAction(UIAlertAction(title: "View Timetable", style: .default, handler: {(uiAlert) in
+            self.segueTimetable()
+        })) //goes to cody's page - displays timetable
         //else:
         alert.addAction(UIAlertAction(title: "Register New Student", style: .default, handler: nil)) //goes to add timetable page
         //dismiss alert and restart capture session
@@ -153,6 +160,19 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     @IBAction func InfoButtonClick(_ sender: Any) {
         let secondViewController = InfoController()
         self.navigationController?.pushViewController(secondViewController, animated: true)
+    }
+    
+    func segueTimetable() {
+        performSegue(withIdentifier: "showTimetable", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showTimetable" {
+            guard let itemDetailViewController = segue.destination as? TimeTableViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            itemDetailViewController.barcodeNumber = barcode
+        }
     }
 }
 
