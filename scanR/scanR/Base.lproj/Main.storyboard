@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Beh-7R-6rB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -264,7 +264,7 @@
         <!--Search-->
         <scene sceneID="NXZ-lb-KU2">
             <objects>
-                <viewController title="Search" id="Beh-7R-6rB" sceneMemberID="viewController">
+                <viewController title="Search" id="Beh-7R-6rB" customClass="SearchViewController" customModule="scanR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="buD-5C-Jrb"/>
                         <viewControllerLayoutGuide type="bottom" id="Cgt-th-Gq7"/>
@@ -302,6 +302,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
+                        <outlet property="SearchBar" destination="lEj-nN-zF0" id="Eaa-Pr-t1P"/>
                         <outlet property="searchDisplayController" destination="Pas-aP-gjk" id="uJD-OA-XWE"/>
                     </connections>
                 </viewController>
@@ -325,7 +326,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="969" y="869"/>
+            <point key="canvasLocation" x="968.79999999999995" y="868.51574212893559"/>
         </scene>
         <!--Time Table Detail View Controller-->
         <scene sceneID="mEV-4w-Chb">

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A91B602A1F7C661900F481C8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91B60291F7C661900F481C8 /* SearchViewController.swift */; };
 		A935B4781F7AE25C0056A409 /* ApiLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935B4771F7AE25C0056A409 /* ApiLogic.swift */; };
 		C3CBD7651F7616AA004A1DD2 /* TimeTableDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBD7641F7616AA004A1DD2 /* TimeTableDetailViewController.swift */; };
 		D1EF71B91F74906200B38F2F /* InfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF71B81F74906200B38F2F /* InfoController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A91B60291F7C661900F481C8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A935B4771F7AE25C0056A409 /* ApiLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiLogic.swift; sourceTree = "<group>"; };
 		C3CBD7641F7616AA004A1DD2 /* TimeTableDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableDetailViewController.swift; sourceTree = "<group>"; };
 		D1EF71B81F74906200B38F2F /* InfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				E2C969D81F735A0C000A62F1 /* Foo.swift */,
 				D1EF71B81F74906200B38F2F /* InfoController.swift */,
 				C3CBD7641F7616AA004A1DD2 /* TimeTableDetailViewController.swift */,
+				A91B60291F7C661900F481C8 /* SearchViewController.swift */,
 			);
 			path = scanR;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				E2C969D51F734635000A62F1 /* TimeTableViewCell.swift in Sources */,
 				A935B4781F7AE25C0056A409 /* ApiLogic.swift in Sources */,
 				E264AC6A1F687DED00133BAF /* ViewController.swift in Sources */,
+				A91B602A1F7C661900F481C8 /* SearchViewController.swift in Sources */,
 				D1EF71B91F74906200B38F2F /* InfoController.swift in Sources */,
 				E264AC681F687DED00133BAF /* AppDelegate.swift in Sources */,
 				E2C969D91F735A0C000A62F1 /* Foo.swift in Sources */,
