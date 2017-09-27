@@ -13,8 +13,6 @@ class TimeTableViewController: UITableViewController {
     var foos = [Timeslot]()
     var barcodeNumber = Int64()
     
-  
-    
     @IBAction func unwindToTimetable(unwindSegue: UIStoryboardSegue) {
     }
     
@@ -32,7 +30,6 @@ class TimeTableViewController: UITableViewController {
     }
 
     func loadData(){
-        
        /* let currentDate = "0900"
         
         guard let time1 = Foo(code: "COMP6008", room: "DT308", time: currentDate) else{
