@@ -119,6 +119,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Beh-7R-6rB" kind="showDetail" id="4tF-wv-068"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNF-7j-Np7">
                                 <rect key="frame" x="337" y="28" width="22" height="22"/>
@@ -270,16 +273,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fz3-1O-47r">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fz3-1O-47r">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Search" id="zwF-yW-BrX">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="GOn-VF-W4R"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="lU4-IM-ocq">
+                                            <connections>
+                                                <segue destination="HRD-nZ-GhG" kind="unwind" unwindAction="unwindToCameraWithUnwindSegue:" id="p0T-0c-JaU"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" placeholder="Enter Student ID Number" translatesAutoresizingMaskIntoConstraints="NO" id="lEj-nN-zF0">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Enter Student ID Number" translatesAutoresizingMaskIntoConstraints="NO" id="lEj-nN-zF0">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -291,20 +301,13 @@
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Fz3-1O-47r" firstAttribute="leading" secondItem="lEj-nN-zF0" secondAttribute="leading" id="5e0-fD-uWO"/>
-                            <constraint firstAttribute="trailing" secondItem="Fz3-1O-47r" secondAttribute="trailing" id="D5l-mK-b67"/>
-                            <constraint firstItem="Fz3-1O-47r" firstAttribute="leading" secondItem="Eur-eZ-5Wa" secondAttribute="leading" id="HJ3-cX-f7C"/>
-                            <constraint firstItem="Fz3-1O-47r" firstAttribute="top" secondItem="Eur-eZ-5Wa" secondAttribute="top" id="NRe-or-ntP"/>
-                            <constraint firstItem="Fz3-1O-47r" firstAttribute="bottom" secondItem="lEj-nN-zF0" secondAttribute="top" id="bEU-pI-C4c"/>
-                            <constraint firstItem="Fz3-1O-47r" firstAttribute="trailing" secondItem="lEj-nN-zF0" secondAttribute="trailing" id="vJz-sS-9vE"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="searchDisplayController" destination="Pas-aP-gjk" id="uJD-OA-XWE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MG3-Zb-75b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HRD-nZ-GhG" userLabel="Exit" sceneMemberID="exit"/>
                 <searchDisplayController id="37F-vz-k2O">
                     <connections>
                         <outlet property="delegate" destination="Beh-7R-6rB" id="QGl-Ae-UDu"/>
