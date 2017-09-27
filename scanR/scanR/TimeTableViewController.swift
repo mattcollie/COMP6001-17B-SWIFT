@@ -13,13 +13,14 @@ class TimeTableViewController: UITableViewController {
     var foos = [Timeslot]()
     var barcodeNumber = Int64()
     var studentId = Int64()
+    var dayOfWeek = ""
     
     @IBAction func unwindToTimetable(unwindSegue: UIStoryboardSegue) {
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var student = Student.self
+        var student = Student(barcode: barcodeNumber)
         var response = URLResponse()
 
         
@@ -28,44 +29,16 @@ class TimeTableViewController: UITableViewController {
             self.studentId = (student?.StudentId)!
         })
         
-        TimeslotApi.GetTimeslotsByStudentId(id: studentId, response: { (student, response) -> Void in
-            var foo = [Timeslot]()
+        TimeslotApi.GetTimeslotsByStudentId(id: studentId, response: { (foos, response) -> Void in
         })
         
-        loadData()
+        var bar = foos
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-
-    func loadData(){
-       /* let currentDate = "0900"
-        
-        guard let time1 = Foo(code: "COMP6008", room: "DT308", time: currentDate) else{
-            fatalError("Unable to instantiate time1")
-        }
-        
-        guard let time2 = Foo(code: "COMP6008", room: "DT308", time: currentDate) else{
-            fatalError("Unable to instantiate time1")
-        }
-        
-        guard let time3 = Foo(code: "COMP6008", room: "DT308", time: currentDate) else{
-            fatalError("Unable to instantiate time1")
-        }
-        
-        guard let time4 = Foo(code: "COMP6008", room: "DT308", time: currentDate) else{
-            fatalError("Unable to instantiate time1")
-        }
-        
-        guard let time5 = Foo(code: "COMP6008", room: "DT308", time: currentDate) else{
-            fatalError("Unable to instantiate time1")
-        }
-        
-        foos += [time1, time2, time3, time4, time5]
-        */
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,12 +50,12 @@ class TimeTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return foos.count
     }
 
     
@@ -91,9 +64,14 @@ class TimeTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of TimeTableViewCell")
         }
        let foo = foos[indexPath.row]    //this will give us the meal we want to display in the cell
-         
+         SetDay(foo.Day)
+        
          cell.classLabel.text = foo.PaperName     //this will set properties in the cell
          cell.roomLabel.text = foo.ClassName
+        cell.hourLabel.text = String(foo.Hour)
+        cell.durationLabel.text = String(foo.DurationMinutes)
+        cell.dayLabel.text = dayOfWeek
+        
          
         // Configure the cell...
 
@@ -104,6 +82,24 @@ class TimeTableViewController: UITableViewController {
         return "Section \(section)"
     }
     
+    func SetDay(_ day: Int){
+        
+        switch(day){
+        case 1:
+            dayOfWeek = "Monday"
+        case 2:
+            dayOfWeek = "Tuesday"
+        case 3:
+            dayOfWeek = "Wednesday"
+        case 4:
+            dayOfWeek = "Thursday"
+        case 5:
+            dayOfWeek = "Friday"
+            
+        default:
+            dayOfWeek = "Groundhog day!"
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

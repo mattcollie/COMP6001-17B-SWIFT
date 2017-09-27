@@ -52,10 +52,13 @@ class StudentApi : ApiLogic {
     public static func GetByStudentId(id: Int64, response: @escaping GetByStudentMethod) {
         GetResult(id: id, response: {(data, urlResponse, error) -> Void in
             if let data = data,
-                let rawJSON = try? JSONSerialization.jsonObject(with: data),
-                let json = rawJSON as? [String: String] {
-                print(json)
-                let student = Student(json: json)
+                let rawJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                print(rawJSON)
+                var targetDict = [String: String]()
+                for (key, value) in rawJSON! {
+                    targetDict[key] = String(describing: value)
+                }
+                let student = Student(json: targetDict)
                 response(student, urlResponse)
             }
         })
@@ -65,10 +68,13 @@ class StudentApi : ApiLogic {
     public static func GetByBarcode(id: Int64, response: @escaping GetByBarcodeMethod) {
         GetRequest(extra: "barcode/" + String(id), response: {(data, urlResponse, error) -> Void in
             if let data = data,
-                let rawJSON = try? JSONSerialization.jsonObject(with: data),
-                let json = rawJSON as? [String: String] {
-                print(json)
-                let student = Student(json: json)
+                let rawJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                print(rawJSON)
+                var targetDict = [String: String]()
+                for (key, value) in rawJSON! {
+                    targetDict[key] = String(describing: value)
+                }
+                let student = Student(json: targetDict)
                 response(student, urlResponse)
             }
         })
@@ -112,14 +118,14 @@ struct Timeslot {
     var StudentId: Int64
     
     init?(json: [String: String]) {
-        guard let id = Int64(json["id"]!),
-            let day = Int(json["day"]!),
-            let hour = Int(json["hour"]!),
-            let durationminutes = Int(json["durationminutes"]!),
-            let className = json["classname"],
-            let paperName = json["papername"],
-            let classType = json["classtype"],
-            let studentId = Int64(json["studentid"]!) else { return nil }
+        guard let id = Int64(json["Id"]!),
+            let day = Int(json["Day"]!),
+            let hour = Int(json["Hour"]!),
+            let durationminutes = Int(json["DurationMinutes"]!),
+            let className = json["ClassName"],
+            let paperName = json["PaperName"],
+            let classType = json["ClassType"],
+            let studentId = Int64(json["StudentId"]!) else { return nil }
         
         Id = id
         Day = day
@@ -160,14 +166,20 @@ struct Student {
     var BarcodeId: Int64?
     
     init?(json: [String: String]) {
-        guard let studentId = Int64(json["studentid"]!),
-            let firstName = json["firstname"],
-            let lastName = json["lastname"],
-            let barcodeId = Int64((json["barcodeid"])!) else { return nil }
+        guard let studentId = Int64(json["StudentId"]!),
+            let firstName = json["FirstName"],
+            let lastName = json["LastName"],
+            let barcodeId = Int64((json["BarcodeId"])!) else { return nil }
         
         StudentId = studentId
         FirstName = firstName
         LastName = lastName
         BarcodeId = barcodeId
+    }
+    init(barcode: Int64) {
+        StudentId = 0
+        FirstName = ""
+        LastName = ""
+        BarcodeId = barcode
     }
 }
