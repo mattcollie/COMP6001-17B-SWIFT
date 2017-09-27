@@ -10,7 +10,7 @@ import UIKit
 
 class TimeTableViewController: UITableViewController {
 
-    var foos = [Foo]()
+    var foos = [Timeslot]()
     var barcodeNumber = Int()
     
     @IBAction func unwindToTimetable(unwindSegue: UIStoryboardSegue) {
@@ -28,7 +28,8 @@ class TimeTableViewController: UITableViewController {
     }
 
     func loadData(){
-        
+        // LOAD THE TINGS HERE
+        /*
         let currentDate = "0900"
         
         guard let time1 = Foo(code: "COMP6008", room: "DT308", time: currentDate) else{
@@ -52,6 +53,7 @@ class TimeTableViewController: UITableViewController {
         }
         
         foos += [time1, time2, time3, time4, time5]
+        */
         
     }
     
@@ -79,9 +81,8 @@ class TimeTableViewController: UITableViewController {
         }
        let foo = foos[indexPath.row]    //this will give us the meal we want to display in the cell
          
-         cell.classLabel.text = foo.code     //this will set properties in the cell
-         cell.roomLabel.text = foo.room
-         cell.timeLabel.text = foo.time
+         cell.classLabel.text = foo.PaperName     //this will set properties in the cell
+         cell.roomLabel.text = foo.ClassName
          
         // Configure the cell...
 
