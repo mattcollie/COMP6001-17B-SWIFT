@@ -12,13 +12,25 @@ class TimeTableViewController: UITableViewController {
 
     var foos = [Timeslot]()
     var barcodeNumber = Int64()
+    var studentId = Int64()
     
     @IBAction func unwindToTimetable(unwindSegue: UIStoryboardSegue) {
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-          var studentID = StudentApi.GetByBarcode(id: barcodeNumber, response: <#T##StudentApi.GetByBarcodeMethod##StudentApi.GetByBarcodeMethod##(Student?, URLResponse?) -> Void#>)
+        var student = Student.self
+        var response = URLResponse()
+
+        
+        StudentApi.GetByBarcode(id: barcodeNumber, response: { (student, response) -> Void in
+            // code here
+            self.studentId = (student?.StudentId)!
+        })
+        
+        TimeslotApi.GetTimeslotsByStudentId(id: studentId, response: { (student, response) -> Void in
+            var foo = [Timeslot]()
+        })
         
         loadData()
         
