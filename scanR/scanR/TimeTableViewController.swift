@@ -10,14 +10,18 @@ import UIKit
 
 class TimeTableViewController: UITableViewController {
 
-    var foos = [Foo]()
-    var barcodeNumber = Int()
+    var foos = [Timeslot]()
+    var barcodeNumber = Int64()
+    
+  
     
     @IBAction func unwindToTimetable(unwindSegue: UIStoryboardSegue) {
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+          var studentID = StudentApi.GetByBarcode(id: barcodeNumber, response: <#T##StudentApi.GetByBarcodeMethod##StudentApi.GetByBarcodeMethod##(Student?, URLResponse?) -> Void#>)
+        
         loadData()
         
         // Uncomment the following line to preserve selection between presentations
@@ -29,7 +33,7 @@ class TimeTableViewController: UITableViewController {
 
     func loadData(){
         
-        let currentDate = "0900"
+       /* let currentDate = "0900"
         
         guard let time1 = Foo(code: "COMP6008", room: "DT308", time: currentDate) else{
             fatalError("Unable to instantiate time1")
@@ -52,7 +56,7 @@ class TimeTableViewController: UITableViewController {
         }
         
         foos += [time1, time2, time3, time4, time5]
-        
+        */
     }
     
     override func didReceiveMemoryWarning() {
@@ -79,9 +83,8 @@ class TimeTableViewController: UITableViewController {
         }
        let foo = foos[indexPath.row]    //this will give us the meal we want to display in the cell
          
-         cell.classLabel.text = foo.code     //this will set properties in the cell
-         cell.roomLabel.text = foo.room
-         cell.timeLabel.text = foo.time
+         cell.classLabel.text = foo.PaperName     //this will set properties in the cell
+         cell.roomLabel.text = foo.ClassName
          
         // Configure the cell...
 
