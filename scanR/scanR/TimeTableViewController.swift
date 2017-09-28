@@ -10,7 +10,7 @@ import UIKit
 
 class TimeTableViewController: UITableViewController {
 
-    var foos = [Timeslot]()
+    var timeSlots = [Timeslot]()
     var barcodeNumber = Int64()
     var studentId = Int64()
     var dayOfWeek = ""
@@ -22,6 +22,7 @@ class TimeTableViewController: UITableViewController {
         super.viewDidLoad()
         var student = Student(barcode: barcodeNumber)
         var response = URLResponse()
+        var slots = [Timeslot]()
 
         
         StudentApi.GetByBarcode(id: barcodeNumber, response: { (student, response) -> Void in
@@ -29,10 +30,10 @@ class TimeTableViewController: UITableViewController {
             self.studentId = (student?.StudentId)!
         })
         
-        TimeslotApi.GetTimeslotsByStudentId(id: studentId, response: { (foos, response) -> Void in
+        TimeslotApi.GetTimeslotsByStudentId(id: studentId, response: { (slots, response) -> Void in
+            self.timeSlots = slots!
         })
-        
-        var bar = foos
+    
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -55,7 +56,7 @@ class TimeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return foos.count
+        return timeSlots.count
     }
 
     
@@ -63,13 +64,13 @@ class TimeTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimeTableViewCell", for: indexPath) as? TimeTableViewCell else {
             fatalError("The dequeued cell is not an instance of TimeTableViewCell")
         }
-       let foo = foos[indexPath.row]    //this will give us the meal we want to display in the cell
-         SetDay(foo.Day)
+       let timeslot = timeSlots[indexPath.row]    //this will give us the meal we want to display in the cell
+         SetDay(timeslot.Day)
         
-         cell.classLabel.text = foo.PaperName     //this will set properties in the cell
-         cell.roomLabel.text = foo.ClassName
-        cell.hourLabel.text = String(foo.Hour)
-        cell.durationLabel.text = String(foo.DurationMinutes)
+         cell.classLabel.text = timeslot.PaperName     //this will set properties in the cell
+         cell.roomLabel.text = timeslot.ClassName
+        cell.hourLabel.text = String(timeslot.Hour)
+        cell.durationLabel.text = String(timeslot.DurationMinutes)
         cell.dayLabel.text = dayOfWeek
         
          
@@ -159,7 +160,7 @@ class TimeTableViewController: UITableViewController {
                         fatalError("The selected cell is not being displayed by the table")
                 }
             
-                let selectedItem = foos[indexPath.row]
+                let selectedItem = timeSlots[indexPath.row]
                 itemDetailViewController.item = selectedItem
             
             case "":
