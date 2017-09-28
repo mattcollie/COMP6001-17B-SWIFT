@@ -14,7 +14,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     var session: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
-    var barcode = 0
+    var barcode = Int64()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,7 +137,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func barcodeDetected(_ code: String) {
-        barcode = Int(code)!
+        barcode = Int64(Int(code)!)
         
         // Let the user know we've found something.
         let alert = UIAlertController(title: "Found a Barcode!", message: "Card Number: \(code)", preferredStyle: UIAlertControllerStyle.alert)
