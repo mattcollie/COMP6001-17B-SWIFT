@@ -53,7 +53,6 @@ class StudentApi : ApiLogic {
         GetResult(id: id, response: {(data, urlResponse, error) -> Void in
             if let data = data,
                 let rawJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                print(rawJSON)
                 var targetDict = [String: String]()
                 for (key, value) in rawJSON! {
                     targetDict[key] = String(describing: value)
@@ -69,7 +68,6 @@ class StudentApi : ApiLogic {
         GetRequest(extra: "barcode/" + String(id), response: {(data, urlResponse, error) -> Void in
             if let data = data,
                 let rawJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                print(rawJSON)
                 var targetDict = [String: String]()
                 for (key, value) in rawJSON! {
                     targetDict[key] = String(describing: value)
@@ -89,9 +87,13 @@ class TimeslotApi : ApiLogic {
         GetResult(id: id, response: {(data, urlResponse, error) -> Void in
             var timeslots: [Timeslot] = []
             if let data = data,
-                let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
-                for case let result in json! {
-                    if let timeslot = Timeslot(json: result as! [String : String]) {
+                let rawJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
+                for case let result in rawJSON! {
+                    var targetDict = [String: String]()
+                    for (key, value) in result {
+                        targetDict[key] = String(describing: value)
+                    }
+                    if let timeslot = Timeslot(json: targetDict) {
                         timeslots.append(timeslot)
                     }
                 }
@@ -135,27 +137,6 @@ struct Timeslot {
         PaperName = paperName
         ClassType = classType
         StudentId = studentId
-    }
-        
-    
-    func toJSON() -> String? {
-        let props: [String: Any?] = [
-            "Id": Id,
-            "Day": Day,
-            "Hour": Hour,
-            "DurationMinutes": DurationMinutes,
-            "ClassName": ClassName,
-            "PaperName": PaperName,
-            "StudentId": StudentId
-        ]
-        return ""
-        do {
-            //let jsonData = try JSONSerialization.dataWithJSONObject(props, options: .PrettyPrinted)
-            //return String(data, jsonData, encoding: NSUTF8StringEncoding)
-        } catch let error {
-            print("error converting to json: \(error)")
-            return nil
-        }
     }
 }
 

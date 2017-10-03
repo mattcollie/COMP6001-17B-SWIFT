@@ -58,7 +58,7 @@
                   moduleName = "scanR"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/swiftgroup1/Desktop/COMP6001-17B-SWIFT/scanR/scanR/TimeTableViewController.swift"
-                  timestampString = "528753073.781131"
+                  timestampString = "528753527.168994"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
@@ -73,7 +73,7 @@
                   moduleName = "scanR"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/swiftgroup1/Desktop/COMP6001-17B-SWIFT/scanR/scanR/TimeTableViewController.swift"
-                  timestampString = "528753073.783613"
+                  timestampString = "528753527.17894"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "29"
@@ -96,22 +96,6 @@
             startingLineNumber = "29"
             endingLineNumber = "29"
             landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "scanR/ApiLogic.swift"
-            timestampString = "528247391.934475"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "init(json:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
