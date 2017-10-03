@@ -58,12 +58,12 @@
                   moduleName = "scanR"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/swiftgroup1/Desktop/COMP6001-17B-SWIFT/scanR/scanR/TimeTableViewController.swift"
-                  timestampString = "528247392.268761"
+                  timestampString = "528753073.781131"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "248">
+                  offsetFromSymbolStart = "279">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -73,12 +73,12 @@
                   moduleName = "scanR"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/swiftgroup1/Desktop/COMP6001-17B-SWIFT/scanR/scanR/TimeTableViewController.swift"
-                  timestampString = "528247392.27324"
+                  timestampString = "528753073.783613"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "29"
                   endingLineNumber = "29"
-                  offsetFromSymbolStart = "112">
+                  offsetFromSymbolStart = "114">
                </Location>
             </Locations>
          </BreakpointContent>
