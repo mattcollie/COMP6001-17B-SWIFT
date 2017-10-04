@@ -403,9 +403,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Edit Item" id="9Hh-A8-6fZ">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Oqm-H7-e19">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Oqm-H7-e19">
                                             <connections>
-                                                <segue destination="NhH-h2-XoZ" kind="unwind" unwindAction="unwindToTimetableWithUnwindSegue:" id="EfG-GQ-KcV"/>
+                                                <segue destination="NhH-h2-XoZ" kind="unwind" unwindAction="unwindToTimetableWithSender:" id="5Cj-bR-cxA"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

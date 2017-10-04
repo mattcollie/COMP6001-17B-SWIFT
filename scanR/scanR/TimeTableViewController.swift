@@ -15,7 +15,17 @@ class TimeTableViewController: UITableViewController {
     var studentId = Int64()
     var dayOfWeek = ""
     
-    @IBAction func unwindToTimetable(unwindSegue: UIStoryboardSegue) {
+    @IBAction func unwindToTimetable(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? TimeTableDetailViewController, let timeSlot = sourceViewController.item{
+            
+            TimeslotApi.UpdateTimeslot(timeslot: timeSlot)
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing item.
+                timeSlots[selectedIndexPath.row] = timeSlot
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+        }
     }
     
     override func viewDidLoad() {
