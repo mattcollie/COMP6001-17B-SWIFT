@@ -28,11 +28,12 @@ class TimeTableViewController: UITableViewController {
         StudentApi.GetByBarcode(id: barcodeNumber, response: { (student, response) -> Void in
             // code here
             self.studentId = (student?.StudentId)!
+            TimeslotApi.GetTimeslotsByStudentId(id: self.studentId, response: { (slots, response) -> Void in
+                self.timeSlots = slots!
+                self.tableView.reloadData()
+            })
         })
         
-        TimeslotApi.GetTimeslotsByStudentId(id: studentId, response: { (slots, response) -> Void in
-            self.timeSlots = slots!
-        })
     
         
         // Uncomment the following line to preserve selection between presentations
