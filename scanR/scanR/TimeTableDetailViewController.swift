@@ -22,9 +22,8 @@ class TimeTableDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        SetDayOfWeek()
         if let item = item {
-            SetDayOfWeek()
             lblDay.text = dayOfWeek
             lblPaper.text = item.PaperName
             lblRoom.text = item.ClassName
