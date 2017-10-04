@@ -184,4 +184,11 @@ struct Student {
         LastName = ""
         BarcodeId = barcode
     }
+    init(id: Int64) {
+        StudentId = id
+        FirstName = ""
+        LastName = ""
+        BarcodeId = 0
+    }
+    
 }
