@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -184,7 +184,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9hc-c6-JWb" id="4va-gP-qt5">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5p-iT-y0a">
@@ -302,23 +302,21 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Enter Student ID Number" translatesAutoresizingMaskIntoConstraints="NO" id="lEj-nN-zF0">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Student ID Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8yF-ye-tut">
+                                <rect key="frame" x="0.0" y="64" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="Beh-7R-6rB" id="lN2-Gw-2nw"/>
-                                </connections>
-                            </searchBar>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" searchField="YES"/>
+                                </accessibility>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
-                        <outlet property="SearchBar" destination="lEj-nN-zF0" id="Eaa-Pr-t1P"/>
                         <outlet property="searchDisplayController" destination="Pas-aP-gjk" id="uJD-OA-XWE"/>
                     </connections>
                 </viewController>
@@ -335,14 +333,13 @@
                 <searchDisplayController id="Pas-aP-gjk">
                     <connections>
                         <outlet property="delegate" destination="Beh-7R-6rB" id="e0o-nj-Jox"/>
-                        <outlet property="searchBar" destination="lEj-nN-zF0" id="1ge-zf-ZVR"/>
                         <outlet property="searchContentsController" destination="Beh-7R-6rB" id="5zU-Ih-Re6"/>
                         <outlet property="searchResultsDataSource" destination="Beh-7R-6rB" id="Cl8-1m-inH"/>
                         <outlet property="searchResultsDelegate" destination="Beh-7R-6rB" id="Yvy-hT-X7K"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="969" y="833"/>
+            <point key="canvasLocation" x="968.79999999999995" y="832.53373313343332"/>
         </scene>
         <!--Time Table Detail View Controller-->
         <scene sceneID="mEV-4w-Chb">
