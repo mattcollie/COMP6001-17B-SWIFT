@@ -100,14 +100,20 @@ class TimeTableDetailViewController: UIViewController {
     @IBAction func lblClassTypeChanged(_ sender: UITextField) {
         item?.ClassType = lblClassType.text!
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if lblDay.text != nil{
+            item?.Day = GetDayOfWeek()
+        }
+        item?.PaperName = lblPaper.text!
+        item?.ClassName = lblRoom.text!
+        item?.Hour = Int(lblHour.text!)!
+        item?.DurationMinutes = Int(lblDuration.text!)!
+        item?.ClassType = lblClassType.text!
+        
+        super.prepare(for: segue, sender: sender)
     }
-    */
+    
 
 }

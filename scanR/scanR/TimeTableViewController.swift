@@ -16,13 +16,19 @@ class TimeTableViewController: UITableViewController {
     var dayOfWeek = ""
     
     @IBAction func unwindToTimetable(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? TimeTableDetailViewController, let timeSlot = sourceViewController.item{
-            TimeslotApi.UpdateTimeslot(timeslot: timeSlot)
+        
+        guard let identifier = sender.identifier as? String else{
+            fatalError("Segue has an unknown identifier: \(sender)")
+        }
+        
+        if (identifier == "Save"){
+            if let sourceViewController = sender.source as? TimeTableDetailViewController, let timeSlot = sourceViewController.item{
+                TimeslotApi.UpdateTimeslot(timeslot: timeSlot)
             
-            if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                // Update an existing item.
-                timeSlots[selectedIndexPath.row] = timeSlot
-                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+                if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                    timeSlots[selectedIndexPath.row] = timeSlot
+                    tableView.reloadRows(at: [selectedIndexPath], with: .none)
+                }
             }
         }
     }
