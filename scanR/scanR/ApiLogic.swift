@@ -35,12 +35,10 @@ class ApiLogic {
         if !jsonData.isEmpty {
             var request = URLRequest(url: GetURL(type: endpoint))
             request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = jsonData
-            
-            URLSession.shared.getAllTasks { (openTasks: [URLSessionTask]) in
-                NSLog("open tasks: \(openTasks)")
-            }
-            URLSession.shared.dataTask(with: request, completionHandler: response).resume()
+            let task = URLSession.shared.dataTask(with: request, completionHandler: response)
+            task.resume()
         }
     }
 }
@@ -104,6 +102,7 @@ class TimeslotApi : ApiLogic {
     
     public static func UpdateTimeslot(timeslot: Timeslot) {
         HttpPost(jsonData: timeslot.toJSON()!, response: {(data, urlResponse, error) -> Void in
+            print(data)
             print(urlResponse)
         })
     }
@@ -148,6 +147,7 @@ struct Timeslot {
             "DurationMinutes": DurationMinutes,
             "ClassName": ClassName,
             "PaperName": PaperName,
+            "ClassType": ClassType,
             "StudentId": StudentId
         ]
         
