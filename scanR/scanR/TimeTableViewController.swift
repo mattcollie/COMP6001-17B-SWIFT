@@ -17,7 +17,6 @@ class TimeTableViewController: UITableViewController {
     
     @IBAction func unwindToTimetable(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? TimeTableDetailViewController, let timeSlot = sourceViewController.item{
-            
             TimeslotApi.UpdateTimeslot(timeslot: timeSlot)
             
             if let selectedIndexPath = tableView.indexPathForSelectedRow {

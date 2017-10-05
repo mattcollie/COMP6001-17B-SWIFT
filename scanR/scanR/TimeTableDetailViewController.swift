@@ -56,12 +56,48 @@ class TimeTableDetailViewController: UIViewController {
             dayOfWeek = "To infinty and beyond!"
         }
     }
+    
+    func GetDayOfWeek() -> Int{
+        switch(dayOfWeek){
+        case "Monday":
+            return 1
+        case "Tuesday":
+            return 2
+        case "Wednesday":
+            return 3
+        case "Thursday":
+            return 4
+        case "Friday":
+            return 5
+            
+        default:
+            return 0
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func lblDayChanged(_ sender: UITextField) {
+        item?.Day = GetDayOfWeek()
+    }
+    @IBAction func lblPaperChanged(_ sender: UITextField) {
+        item?.PaperName = lblPaper.text!
+    }
+    @IBAction func lblRoomChanged(_ sender: UITextField) {
+        item?.ClassName = lblRoom.text!
+    }
+    @IBAction func lblHourChanged(_ sender: UITextField) {
+        item?.Hour = Int(lblHour.text!)!
+    }
+    @IBAction func lblDurationChanged(_ sender: UITextField) {
+        item?.DurationMinutes = Int(lblDuration.text!)!
+    }
+    @IBAction func lblClassTypeChanged(_ sender: UITextField) {
+        item?.ClassType = lblClassType.text!
+    }
     /*
     // MARK: - Navigation
 

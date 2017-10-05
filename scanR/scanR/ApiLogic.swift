@@ -31,11 +31,11 @@ class ApiLogic {
         GetRequest(extra: String(id), response: response)
     }
     
-    internal static func HttpPost(jsonData: String, response: @escaping GetMethodHandler) {
+    internal static func HttpPost(jsonData: Data, response: @escaping GetMethodHandler) {
         if !jsonData.isEmpty {
             var request = URLRequest(url: GetURL(type: endpoint))
             request.httpMethod = "POST"
-            request.httpBody = jsonData.data(using: .utf8)
+            request.httpBody = jsonData
             
             URLSession.shared.getAllTasks { (openTasks: [URLSessionTask]) in
                 NSLog("open tasks: \(openTasks)")
@@ -104,7 +104,7 @@ class TimeslotApi : ApiLogic {
     
     public static func UpdateTimeslot(timeslot: Timeslot) {
         HttpPost(jsonData: timeslot.toJSON()!, response: {(data, urlResponse, error) -> Void in
-            
+            print(urlResponse)
         })
     }
 }
@@ -140,7 +140,7 @@ struct Timeslot {
     }
         
     
-    func toJSON() -> String? {
+    func toJSON() -> Data? {
         let props: [String: Any?] = [
             "Id": Id,
             "Day": Day,
@@ -150,10 +150,10 @@ struct Timeslot {
             "PaperName": PaperName,
             "StudentId": StudentId
         ]
-        return ""
+        
         do {
-            //let jsonData = try JSONSerialization.dataWithJSONObject(props, options: .PrettyPrinted)
-            //return String(data, jsonData, encoding: NSUTF8StringEncoding)
+            let jsonData = try JSONSerialization.data(withJSONObject: props, options: .prettyPrinted)
+            return jsonData
         } catch let error {
             print("error converting to json: \(error)")
             return nil
