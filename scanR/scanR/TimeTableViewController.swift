@@ -29,6 +29,7 @@ class TimeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        barcodeNumber = 100092487
         var student = Student(barcode: barcodeNumber)
         var response = URLResponse()
         var slots = [Timeslot]()

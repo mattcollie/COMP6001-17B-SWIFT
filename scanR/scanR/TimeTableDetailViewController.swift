@@ -58,7 +58,7 @@ class TimeTableDetailViewController: UIViewController {
     }
     
     func GetDayOfWeek() -> Int{
-        switch(dayOfWeek){
+        switch(lblDay.text!){
         case "Monday":
             return 1
         case "Tuesday":
@@ -81,7 +81,9 @@ class TimeTableDetailViewController: UIViewController {
     }
 
     @IBAction func lblDayChanged(_ sender: UITextField) {
-        item?.Day = GetDayOfWeek()
+        if lblDay.text != nil{
+            item?.Day = GetDayOfWeek()
+        }
     }
     @IBAction func lblPaperChanged(_ sender: UITextField) {
         item?.PaperName = lblPaper.text!
