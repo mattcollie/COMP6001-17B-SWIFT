@@ -6,15 +6,15 @@
 //  Copyright © 2017 Shwifty. All rights reserved.
 //
 
-import UIKit
+import UIKit // Issue#10 issue/10
 
-class SearchViewController: UIViewController, UISearchBarDelegate {
+class SearchViewController: UIViewController {
     
-    @IBOutlet weak var SearchBar: UISearchBar!
+    
+    @IBOutlet weak var searchField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SearchBar.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -23,18 +23,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if SearchBar.text == nil || SearchBar.text == "" {
-            view.endEditing(true)
-        }else{
-            SearchForStudent(studentId: Int64(searchText)!)
+    @IBAction func searchID(_ sender: Any) {
+        var studentId = Int64(searchField.text!)
+        var student = Student(id: studentId!)
+        var response = URLResponse()
+        
+        StudentApi.GetByStudentId(id: studentId!) { (student, response) in
+            // code here to do many more things
         }
-    }
-    
-    func SearchForStudent(studentId:Int64){
-        // call the api to search for a student id
-        // do more things after that
-        var foo = studentId
     }
 
     /*
@@ -48,3 +44,4 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     */
 
 }
+
