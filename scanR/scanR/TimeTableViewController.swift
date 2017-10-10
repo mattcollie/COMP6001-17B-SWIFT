@@ -79,8 +79,8 @@ class TimeTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
-        return "Section \(section)"
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection StudentId: Int) -> String?{
+        return "Your Timetable:"
     }
     
     func SetDay(_ day: Int){

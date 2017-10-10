@@ -38,11 +38,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "scanR/TimeTableViewController.swift"
-            timestampString = "528247391.930202"
+            timestampString = "529298984.983374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -51,33 +51,33 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "scanR.TimeTableViewController.viewDidLoad() -&gt; ()"
                   moduleName = "scanR"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/swiftgroup1/Desktop/COMP6001-17B-SWIFT/scanR/scanR/TimeTableViewController.swift"
-                  timestampString = "528247392.268761"
+                  urlString = "file:///Users/swiftgroup1/Desktop/assessment/COMP6001-17B-SWIFT/scanR/scanR/TimeTableViewController.swift"
+                  timestampString = "529298273.361095"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "248">
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "272">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Optional&lt;scanR.Student&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;) -&gt; () in scanR.TimeTableViewController.viewDidLoad() -&gt; ()"
                   moduleName = "scanR"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/swiftgroup1/Desktop/COMP6001-17B-SWIFT/scanR/scanR/TimeTableViewController.swift"
-                  timestampString = "528247392.27324"
+                  urlString = "file:///Users/swiftgroup1/Desktop/assessment/COMP6001-17B-SWIFT/scanR/scanR/TimeTableViewController.swift"
+                  timestampString = "529298273.363687"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
                   offsetFromSymbolStart = "112">
                </Location>
             </Locations>
@@ -86,11 +86,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "scanR/TimeTableViewController.swift"
-            timestampString = "528247391.934388"
+            timestampString = "529298984.983889"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -106,13 +106,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "scanR/ApiLogic.swift"
-            timestampString = "528247391.934475"
+            timestampString = "529298984.984263"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "169"
             endingLineNumber = "169"
             landmarkName = "init(json:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "scanR/TimeTableViewController.swift"
+            timestampString = "529298984.984343"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "scanR.TimeTableViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "scanR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/swiftgroup1/Desktop/assessment/COMP6001-17B-SWIFT/scanR/scanR/TimeTableViewController.swift"
+                  timestampString = "529298985.157159"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "380">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;scanR.Student&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;) -&gt; () in scanR.TimeTableViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "scanR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/swiftgroup1/Desktop/assessment/COMP6001-17B-SWIFT/scanR/scanR/TimeTableViewController.swift"
+                  timestampString = "529298985.159724"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "336">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
