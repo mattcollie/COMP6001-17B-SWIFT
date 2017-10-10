@@ -138,14 +138,22 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     func barcodeDetected(_ code: String) {
         barcode = Int64(Int(code)!)
+
+        var studentId = Int64()
+        StudentApi.GetByBarcode(id: barcode, response: { (student, response) -> Void in
+            // code here
+            studentId = (student?.StudentId)!
+        })
+        
         
         // Let the user know we've found something.
         let alert = UIAlertController(title: "Found a Barcode!", message: "Card Number: \(code)", preferredStyle: UIAlertControllerStyle.alert)
-        //API call here to check if user is registered
-        //if user is registered:
-        alert.addAction(UIAlertAction(title: "View Timetable", style: .default, handler: {(uiAlert) in
+
+        if studentId != 0 {
+            alert.addAction(UIAlertAction(title: "View Timetable", style: .default, handler: {(uiAlert) in
             self.segueTimetable()
-        })) //goes to cody's page - displays timetable
+        }))
+        }//goes to cody's page - displays timetable
         //else:
         alert.addAction(UIAlertAction(title: "Register New Student", style: .default, handler: nil)) //goes to add timetable page
         //dismiss alert and restart capture session
