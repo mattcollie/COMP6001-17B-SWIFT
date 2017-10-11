@@ -155,14 +155,6 @@
                                     <segue destination="QCf-nE-OKF" kind="showDetail" identifier="showSavedTimetable" id="RBC-4t-DgJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWU-81-aHY">
-                                <rect key="frame" x="313" y="553" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Test"/>
-                                <connections>
-                                    <segue destination="QCf-nE-OKF" kind="showDetail" identifier="showTimetable" id="All-Qb-13s"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -535,6 +527,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="All-Qb-13s"/>
+        <segue reference="qAL-Qz-bhp"/>
     </inferredMetricsTieBreakers>
 </document>

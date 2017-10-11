@@ -18,6 +18,11 @@ import Foundation
 //ClassType = Str
 //StudentId = int64
 
+//issue 7 - Ashton
+//I know what you're thinking, why not just use the array returned by the API request?
+//The answer is, I don't really know. I tried to use the UserDefaults framework originally but that doesn't work for arrays of objects.
+//So I tried following the tutorial on saving arrays of objects in the book but it doesn't seem to work the same way here as it did there.
+//It's also very late and I'm very tired so I'm calling it. Hopefully I can still get some marks for being halfway there? (And my bug fix of course 😀)
 class timeSlotClass:Codable {
     struct timeSlot {
         var id: Int
