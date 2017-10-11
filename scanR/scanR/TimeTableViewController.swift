@@ -18,15 +18,7 @@ class TimeTableViewController: UITableViewController {
     
     @IBAction func unwindToTimetable(sender: UIStoryboardSegue) {
     
-        //for reference, timeslot array looks like this:
-        //Id = int64
-        //Day = int
-        //Hour = int
-        //DurationMinutes = int
-        //ClassName = Str
-        //PaperName = Str
-        //ClassType = Str
-        //StudentId = int64
+
     
         guard let identifier = sender.identifier as? String else{
             fatalError("Segue has an unknown identifier: \(sender)")
@@ -43,22 +35,13 @@ class TimeTableViewController: UITableViewController {
             }
         }
     }
-    //encoding to save to UserDefaults
-    override func encode(with aCoder: NSCoder) {
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        var tsClassArray = [timeSlotClass.timeSlot] ()
         timeSlots.forEach { timeslot in
-            aCoder.encode(timeslot.Id, forKey: "Id")
-            aCoder.encode(timeslot.Day, forKey: "Day")
-            aCoder.encode(timeslot.Hour, forKey: "Hour")
-            aCoder.encode(timeslot.DurationMinutes, forKey: "Duration")
-            aCoder.encode(timeslot.ClassName, forKey: "ClassName")
-            aCoder.encode(timeslot.PaperName, forKey: "PaperName")
-            aCoder.encode(timeslot.ClassType, forKey: "ClassType")
-            aCoder.encode(timeslot.StudentId, forKey: "StudentId")
+            timeSlotClass.createTimeslot(id: timeslot.Id, day: timeslot.Day, hour: timeslot.Hour, durationMinutes: timeslot.DurationMinutes, className: timeslot.ClassName, paperName: timeslot.PaperName, classType: timeslot.ClassType, studentId: timeslot.StudentId)
         }
-        
-        let timeSlotsData = NSKeyedArchiver.archivedData(withRootObject: timeSlots)
-        UserDefaults.standard.set(timeSlotsData, forKey: "timeslots")
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
