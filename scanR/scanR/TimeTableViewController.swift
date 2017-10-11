@@ -16,7 +16,9 @@ class TimeTableViewController: UITableViewController {
     var dayOfWeek = ""
     
     @IBAction func unwindToTimetable(sender: UIStoryboardSegue) {
-        
+    
+    
+    
         guard let identifier = sender.identifier as? String else{
             fatalError("Segue has an unknown identifier: \(sender)")
         }
@@ -33,22 +35,39 @@ class TimeTableViewController: UITableViewController {
         }
     }
     
+    //Ashton's function for saving the timetable
+    @IBAction func saveTimetable(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(timeSlots, forKey: "timeslotKey")
+        //excuse me mr computer can you please save the timetable please so i can look at it later thank you
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         barcodeNumber = 100092487
+        var origin = ""
         var student = Student(barcode: barcodeNumber)
         var response = URLResponse()
         var slots = [Timeslot]()
 
-        
-        StudentApi.GetByBarcode(id: barcodeNumber, response: { (student, response) -> Void in
-            // code here
-            self.studentId = (student?.StudentId)!
-            TimeslotApi.GetTimeslotsByStudentId(id: self.studentId, response: { (slots, response) -> Void in
-                self.timeSlots = slots!
-                self.tableView.reloadData()
+        if origin == "saved" {
+            let defaults = UserDefaults.standard
+            if let savedSlots = defaults.array(forKey: "timeslotKey") {
+                timeSlots = savedSlots
+            }
+            
+        }
+        else {
+            StudentApi.GetByBarcode(id: barcodeNumber, response: { (student, response) -> Void in
+                // code here
+                self.studentId = (student?.StudentId)!
+                TimeslotApi.GetTimeslotsByStudentId(id: self.studentId, response: { (slots, response) -> Void in
+                    self.timeSlots = slots!
+                    self.tableView.reloadData()
+                })
             })
-        })
+        }
+        
         
     
         

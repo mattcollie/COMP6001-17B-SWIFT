@@ -181,6 +181,12 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             }
             itemDetailViewController.barcodeNumber = barcode
         }
+        else if segue.identifier == "showSavedTimetable"{
+            guard let itemDetailViewController = segue.destination as? TimeTableViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            itemDetailViewController.origin = "saved"
+        }
     }
 }
 
