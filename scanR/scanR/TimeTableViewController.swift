@@ -13,11 +13,20 @@ class TimeTableViewController: UITableViewController {
     var timeSlots = [Timeslot]()
     var barcodeNumber = Int64()
     var studentId = Int64()
+    var origin = String()
     var dayOfWeek = ""
     
     @IBAction func unwindToTimetable(sender: UIStoryboardSegue) {
     
-    
+        //for reference, timeslot array looks like this:
+        //Id = int64
+        //Day = int
+        //Hour = int
+        //DurationMinutes = int
+        //ClassName = Str
+        //PaperName = Str
+        //ClassType = Str
+        //StudentId = int64
     
         guard let identifier = sender.identifier as? String else{
             fatalError("Segue has an unknown identifier: \(sender)")
@@ -37,25 +46,42 @@ class TimeTableViewController: UITableViewController {
     
     //Ashton's function for saving the timetable
     @IBAction func saveTimetable(_ sender: Any) {
-        let defaults = UserDefaults.standard
-        defaults.set(timeSlots, forKey: "timeslotKey")
-        //excuse me mr computer can you please save the timetable please so i can look at it later thank you
+        
+    }
+    
+    override func encode(with aCoder: NSCoder) {
+        timeSlots.forEach { timeslot in
+            aCoder.encode(timeslot.Id, forKey: "Id")
+            aCoder.encode(timeslot.Day, forKey: "Day")
+            aCoder.encode(timeslot.Hour, forKey: "Hour")
+            aCoder.encode(timeslot.DurationMinutes, forKey: "Duration")
+            aCoder.encode(timeslot.ClassName, forKey: "ClassName")
+            aCoder.encode(timeslot.PaperName, forKey: "PaperName")
+            aCoder.encode(timeslot.ClassType, forKey: "ClassType")
+            aCoder.encode(timeslot.StudentId, forKey: "StudentId")
+        }
+        
+        let timeSlotsData = NSKeyedArchiver.archivedData(withRootObject: timeSlots)
+        UserDefaults.standard.set(timeSlotsData, forKey: "timeslots")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         barcodeNumber = 100092487
-        var origin = ""
         var student = Student(barcode: barcodeNumber)
         var response = URLResponse()
         var slots = [Timeslot]()
 
         if origin == "saved" {
-            let defaults = UserDefaults.standard
-            if let savedSlots = defaults.array(forKey: "timeslotKey") {
-                timeSlots = savedSlots
+            guard let slotData = UserDefaults.standard.object(forKey: "timeslots") as? NSData else {
+                print("timeslots not found in UserDefaults")
+                return
             }
-            
+            guard let slots = NSKeyedUnarchiver.unarchiveObject(with: slotData as Data) as? [Timeslot] else {
+                print("Could not unarchive from timeslotData")
+                return
+            }
+            self.timeSlots = slots
         }
         else {
             StudentApi.GetByBarcode(id: barcodeNumber, response: { (student, response) -> Void in
@@ -63,9 +89,10 @@ class TimeTableViewController: UITableViewController {
                 self.studentId = (student?.StudentId)!
                 TimeslotApi.GetTimeslotsByStudentId(id: self.studentId, response: { (slots, response) -> Void in
                     self.timeSlots = slots!
-                    self.tableView.reloadData()
+                    
                 })
             })
+            self.tableView.reloadData()
         }
         
         

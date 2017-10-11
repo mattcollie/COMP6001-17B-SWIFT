@@ -149,11 +149,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         // Let the user know we've found something.
         let alert = UIAlertController(title: "Found a Barcode!", message: "Card Number: \(code)", preferredStyle: UIAlertControllerStyle.alert)
 
-        if studentId != 0 {
+        //if studentId != 0 {
             alert.addAction(UIAlertAction(title: "View Timetable", style: .default, handler: {(uiAlert) in
             self.segueTimetable()
         }))
-        }//goes to cody's page - displays timetable
+        //}//goes to cody's page - displays timetable
         //else:
         alert.addAction(UIAlertAction(title: "Register New Student", style: .default, handler: nil)) //goes to add timetable page
         //dismiss alert and restart capture session
@@ -179,7 +179,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             guard let itemDetailViewController = segue.destination as? TimeTableViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            itemDetailViewController.barcodeNumber = barcode
+            //itemDetailViewController.barcodeNumber = barcode
         }
         else if segue.identifier == "showSavedTimetable"{
             guard let itemDetailViewController = segue.destination as? TimeTableViewController else {
