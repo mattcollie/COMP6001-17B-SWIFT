@@ -149,7 +149,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         // Let the user know we've found something.
         let alert = UIAlertController(title: "Found a Barcode!", message: "Card Number: \(code)", preferredStyle: UIAlertControllerStyle.alert)
 
-        //if studentId != 0 {
+        
+        //issue 6 - Ashton's fix
+        if studentId != 0 {
             alert.addAction(UIAlertAction(title: "View Timetable", style: .default, handler: {(uiAlert) in
             self.segueTimetable()
         }))
