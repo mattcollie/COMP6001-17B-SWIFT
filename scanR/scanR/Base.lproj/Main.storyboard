@@ -183,11 +183,6 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Timetable" id="LIx-dK-ygf">
-                                    <barButtonItem key="leftBarButtonItem" systemItem="save" id="ouc-5t-Zi0">
-                                        <connections>
-                                            <action selector="saveTimetable:" destination="QCf-nE-OKF" id="yGP-Dn-v2P"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" systemItem="stop" id="RDj-pt-HCE">
                                         <connections>
                                             <segue destination="3rE-IH-Bww" kind="unwind" unwindAction="unwindToCameraWithUnwindSegue:" id="TA7-sX-8d5"/>

@@ -43,12 +43,7 @@ class TimeTableViewController: UITableViewController {
             }
         }
     }
-    
-    //Ashton's function for saving the timetable
-    @IBAction func saveTimetable(_ sender: Any) {
-        
-    }
-    
+    //encoding to save to UserDefaults
     override func encode(with aCoder: NSCoder) {
         timeSlots.forEach { timeslot in
             aCoder.encode(timeslot.Id, forKey: "Id")
@@ -73,6 +68,7 @@ class TimeTableViewController: UITableViewController {
         var slots = [Timeslot]()
 
         if origin == "saved" {
+            //this is supposed to unencode the encoded stuff and use it instead of the API if the show saved btton is pressed
             guard let slotData = UserDefaults.standard.object(forKey: "timeslots") as? NSData else {
                 print("timeslots not found in UserDefaults")
                 return
