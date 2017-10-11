@@ -13,10 +13,13 @@ class TimeTableViewController: UITableViewController {
     var timeSlots = [Timeslot]()
     var barcodeNumber = Int64()
     var studentId = Int64()
+    var origin = String()
     var dayOfWeek = ""
     
     @IBAction func unwindToTimetable(sender: UIStoryboardSegue) {
-        
+    
+
+    
         guard let identifier = sender.identifier as? String else{
             fatalError("Segue has an unknown identifier: \(sender)")
         }
@@ -32,6 +35,14 @@ class TimeTableViewController: UITableViewController {
             }
         }
     }
+    //issue 7 code - Ashton. More in the timeSlotClass.swift file
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        var tsClassArray = [timeSlotClass.timeSlot] ()
+        timeSlots.forEach { timeslot in
+            timeSlotClass.createTimeslot(id: timeslot.Id, day: timeslot.Day, hour: timeslot.Hour, durationMinutes: timeslot.DurationMinutes, className: timeslot.ClassName, paperName: timeslot.PaperName, classType: timeslot.ClassType, studentId: timeslot.StudentId)
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +51,30 @@ class TimeTableViewController: UITableViewController {
         var response = URLResponse()
         var slots = [Timeslot]()
 
-        
-        StudentApi.GetByBarcode(id: barcodeNumber, response: { (student, response) -> Void in
-            // code here
-            self.studentId = (student?.StudentId)!
-            TimeslotApi.GetTimeslotsByStudentId(id: self.studentId, response: { (slots, response) -> Void in
-                self.timeSlots = slots!
-                self.tableView.reloadData()
+        if origin == "saved" {
+            //this is supposed to unencode the encoded stuff and use it instead of the API if the show saved btton is pressed
+            guard let slotData = UserDefaults.standard.object(forKey: "timeslots") as? NSData else {
+                print("timeslots not found in UserDefaults")
+                return
+            }
+            guard let slots = NSKeyedUnarchiver.unarchiveObject(with: slotData as Data) as? [Timeslot] else {
+                print("Could not unarchive from timeslotData")
+                return
+            }
+            self.timeSlots = slots
+        }
+        else {
+            StudentApi.GetByBarcode(id: barcodeNumber, response: { (student, response) -> Void in
+                // code here
+                self.studentId = (student?.StudentId)!
+                TimeslotApi.GetTimeslotsByStudentId(id: self.studentId, response: { (slots, response) -> Void in
+                    self.timeSlots = slots!
+                    
+                })
             })
-        })
+            self.tableView.reloadData()
+        }
+        
         
     
         
@@ -118,44 +144,6 @@ class TimeTableViewController: UITableViewController {
             dayOfWeek = "Groundhog day!"
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
